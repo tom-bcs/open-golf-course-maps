@@ -1,0 +1,23 @@
+[project]
+name = "bcs-golf-maps"
+version = "0.1.0"
+description = "Turns OpenStreetMap golf data for Great Britain and Ireland into one JSON file per course."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "shapely>=2.0",
+    "osmium>=4.0",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.uv]
+# A set of scripts, not a library: nothing to install. (uv's editable install
+# is skipped by Python on macOS because the .pth file gets the hidden flag.)
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
