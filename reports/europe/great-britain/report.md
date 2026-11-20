@@ -1,0 +1,711 @@
+# Quality report: europe/great-britain
+
+Source data: 2026-11-19T21:22:20Z. © OpenStreetMap contributors (ODbL 1.0).
+
+- Courses: 2986
+- ready: 1222
+- partial: 574
+- outline: 1190
+- Skipped: 122
+
+## Partial courses
+
+- **h1049856975** (h1049856975): missing hole numbers: [1, 2, 3]; unusual hole count: 6
+- **h1233024341** (h1233024341): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **h1296147909** (h1296147909): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9
+- **h1316207984** (h1316207984): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]; unusual hole count: 11
+- **h1373160268** (h1373160268): missing hole numbers: [12]
+- **h1373177373** (h1373177373): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]; unusual hole count: 12
+- **h1460272036** (h1460272036): missing hole numbers: [11, 12, 13, 14]
+- **h1460272046** (h1460272046): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; unusual hole count: 14
+- **h1494369649** (h1494369649): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]; no green: holes 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **h1522306281** (h1522306281): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **h1524509881** (h1524509881): missing hole numbers: [1]
+- **h1564240367** (h1564240367): 1 holes have no readable number
+- **h385253253** (h385253253): missing hole numbers: [11, 12, 13, 14, 15, 16]
+- **h736498453** (h736498453): 25 holes have no readable number; no green: holes 1 unnumbered
+- **h786966377** (h786966377): missing hole numbers: [1, 2]; unusual hole count: 5
+- **h830070706** (h830070706): missing hole numbers: [2, 3, 4, 5, 6, 7, 8]
+- **h830070715** (h830070715): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **h840947485** (h840947485): missing hole numbers: [1, 2]; unusual hole count: 17
+- **h843189460** (h843189460): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]; unusual hole count: 16
+- **h846023205** (h846023205): missing hole numbers: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+- **h874336561** (h874336561): missing hole numbers: [1, 7, 8, 9, 10, 11]; unusual hole count: 16
+- **h888737521** (h888737521): 1 holes have no readable number; repeated hole numbers: [12]; missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 14, 15, 16, 17]
+- **h893802323** (h893802323): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9
+- **h925606394** (h925606394): repeated hole numbers: [6]; missing hole numbers: [5]; no green: holes 6
+- **h982057128** (h982057128): 17 holes have no readable number; no green: holes 1 unnumbered
+- **h990460369** (h990460369): repeated hole numbers: [2, 6, 13, 14, 17, 18]; missing hole numbers: [10, 11]
+- **r10815470** (r10815470): missing hole numbers: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+- **r13992171** (r13992171): 3 holes have no readable number; missing hole numbers: [5, 6, 7, 11, 12, 14]; unusual hole count: 15
+- **w1135354687** (w1135354687): 3 holes have no readable number
+- **w1184048477** (w1184048477): 9 holes have no readable number; no green: holes 9 unnumbered
+- **w1352102557** (w1352102557): 6 holes have no readable number; no green: holes 5 unnumbered
+- **w1365075294** (w1365075294): 9 holes have no readable number; no green: holes 9 unnumbered
+- **w1474409869** (w1474409869): 3 holes have no readable number; no green: holes 1 unnumbered
+- **w583732054** (w583732054): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8]
+- **w590777618** (w590777618): unusual hole count: 1
+- **w590777619** (w590777619): missing hole numbers: [1]; no green: holes 7, 8, 9
+- **w910967541** (w910967541): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; unusual hole count: 14
+- **2019 Course** (w1447938345): unusual hole count: 6
+- **Aberfoyle Golf Club** (w70755619): 5 holes have no readable number; no green: holes 1 unnumbered
+- **Abernethy Golf club** (w739067431): no green: holes 3, 5, 6, 7, 9
+- **Academy Course** (w1096330531): 3 holes have no readable number
+- **Academy Course** (w370331695-academy-course): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9
+- **Adlington Golf Centre** (w136240651): 1 holes have no readable number; repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Aintree Golf Course** (w121110632): 11 holes have no readable number
+- **Alder Root Golf Course** (w30970073): 4 holes have no readable number
+- **Alderley Edge Golf Club** (w39697494): 8 holes have no readable number; missing hole numbers: [1, 2, 4, 5, 6, 7, 8, 9, 10, 11]; unusual hole count: 12
+- **Aldwark Manor Golf Club** (r14048916): missing hole numbers: [1, 5, 6, 7]; unusual hole count: 13; no green: holes 2, 3, 4, 8, 9, 10, 11, 12, 13
+- **Alford Golf Club** (w111555535): repeated hole numbers: [1]
+- **Alfreton Golf Club** (w324055663): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9
+- **Alresford Golf Club** (w94285123): repeated hole numbers: [4]; no green: holes 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Appleby Golf Club** (w29179539): missing hole numbers: [4, 5, 6]
+- **Arbroath Golf Course** (w264882305): 18 holes have no readable number
+- **Arkley Golf Club** (w24012861): repeated hole numbers: [12]
+- **Army Golf Course** (w79824002): repeated hole numbers: [5]; missing hole numbers: [10, 11, 12, 13, 14, 15, 16, 17]
+- **Arndean** (w1464367588): missing hole numbers: [1, 2, 3]; unusual hole count: 4; no green: holes 4
+- **Arndean** (w1464367588-arndean): missing hole numbers: [4]; no green: holes 1, 2, 3, 5, 6, 7, 8, 9
+- **Ashbury Golf Course** (r14162985): 24 holes have no readable number; repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]; no green: holes 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9, 9, 10, 10, 10, 10, 11, 11, 11, 12, 12, 12, 13, 13, 13, 14, 14, 14, 14, 15, 15, 15, 15, 16, 16, 16, 16, 17, 17, 17, 17, 18, 18, 18, 18, 23 unnumbered
+- **Ashford Manor Golf Club** (w250363948): no green: holes 3, 8
+- **Atholl Palace Hotel Pitch and Putt course** (w518100358): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9
+- **Auchmill Golf Course** (r8851679): unusual hole count: 4; no green: holes 1, 2, 3, 4
+- **Auchterarder Golf Club** (w269353312): no green: holes 6, 11, 13
+- **Bakewell Golf Club** (w1366194598): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8]
+- **Bakewell Golf Club** (w259998000): unusual hole count: 8
+- **Bala Golf Club** (w1554886191): no green: holes 2
+- **Balcomie Links** (w1432609851): no green: holes 12
+- **Ballumbie Castle Golf Course** (w418751600): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Balmoral Estate 9-hole golf course** (w1365625847): 9 holes have no readable number
+- **Balmore Golf Club** (w24500764): repeated hole numbers: [1, 2, 3, 4, 5, 6]
+- **Barassie** (w248434900-barassie): missing hole numbers: [1, 2, 3, 4, 5]
+- **Barassie Links** (w248434900-barassie-links): unusual hole count: 5
+- **Bargoed Golf Course** (w322544024): 1 holes have no readable number
+- **Barton on Sea Golf Club** (w167096416): 19 holes have no readable number; unusual hole count: 8
+- **Batchwood Hall Golf Club** (w4372571): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Bawburgh Golf Course** (w279692408): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]; no green: holes 2, 3, 4, 5, 6, 7, 8
+- **Beau Desert Golf Club** (w1217780552): repeated hole numbers: [10]
+- **Beedles Lake Golf Course** (w110155190): no green: holes 7, 8, 9, 10, 11, 14, 15, 16, 17, 18
+- **Beeston Fields Golf Course** (r3481497): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Beith Golf Club** (w38347384): no green: holes 3, 16
+- **Belleisle & Seafield Golf Courses** (w117940581): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+- **Bellshill Golf Club** (r19002287): 1 holes have no readable number; repeated hole numbers: [9]; no green: holes 9, 1 unnumbered
+- **Ben Rhydding Golf Club** (w95102400): 5 holes have no readable number; missing hole numbers: [2, 3, 6, 8, 9, 11, 12, 15]; unusual hole count: 16
+- **Bidston Golf Club** (r3996638): missing hole numbers: [9]
+- **Bigbury Golf Club** (r3390810): no green: holes 13, 14, 15, 16, 17, 18
+- **Bishop's Stortford Golf Club** (w12654740): 2 holes have no readable number
+- **Bishopbriggs Golf Club** (w31285372): unusual hole count: 6; no green: holes 1
+- **Bishopshire Golf Club** (w430538662): 1 holes have no readable number; no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 1 unnumbered
+- **Blackley Golf Club** (w137171381): 18 holes have no readable number
+- **Blackpool North Shore Golf Course** (w25777754): no green: holes 14
+- **Blundells Hill Golf Club** (w30794399): no green: holes 9
+- **Bondhay Golf Club and Academy** (w370331695): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Boringdon Park Golf Club** (w67829511): no green: holes 5
+- **Borth & Ynyslas Golf Club** (r12860284): 1 holes have no readable number
+- **Bowood Hotel Spa & Golf Resort** (w526896608): repeated hole numbers: [2]; missing hole numbers: [11]
+- **Bowring Park Golf Course** (r3996639): unusual hole count: 2; no green: holes 2
+- **Bracken Course** (h1562531268-bracken-course): missing hole numbers: [1, 2, 3, 4, 5, 6, 12, 13, 14, 15, 16]; no green: holes 11
+- **Bracken Course** (w1481665082-bracken-course): unusual hole count: 1
+- **Bracken Ghyll Golf Club** (w143975905): no green: holes 8
+- **Braehead Golf Club** (w92740598): no green: holes 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18
+- **Brailsford Golf Course** (r19262241): 2 holes have no readable number; missing hole numbers: [1, 3, 12, 13, 14, 15, 17]; no green: holes 2, 4, 5, 6, 7, 8, 9, 10, 11, 16, 18, 2 unnumbered
+- **Bramall Park Golf Club** (w28336517): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Bramhall Golf Club** (w30093732): no green: holes 17
+- **Brampton Park Golf Club** (w30721853): missing hole numbers: [1, 2, 3, 4]; unusual hole count: 15
+- **Brampton Park Golf Club** (w30721855): missing hole numbers: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+- **Bramshaw Golf Course** (w82884835): missing hole numbers: [2, 8]
+- **Brandon Golf Course** (w151941901): unusual hole count: 14
+- **Breadsall Priory Golf Course - Moorland Course** (w1538977348): no green: holes 11
+- **Brechin Golf Club** (r7633360): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Brecon Golf Course** (w204390933): 9 holes have no readable number
+- **Bridlington Links Golf & Leisure Estate** (w305201565): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Brighton & Hove Golf Club** (w292660849): no green: holes 5
+- **Bristol & Clifton Golf Club** (w274362881): no green: holes 18
+- **Brodick Golf Course** (r3339561): no green: holes 4
+- **Bromborough Golf Club** (w13857535): 1 holes have no readable number
+- **Brora Golf Club** (w264432772): 1 holes have no readable number
+- **Bruntsfield Links Short Hole Golf Course** (w217619432): unusual hole count: 36
+- **Bruntwood Park Pitch & Putt** (w209330134): no green: holes 9, 13, 16
+- **Bryn Bach Park Golf Club** (w223606906): 9 holes have no readable number
+- **Buchanan Castle Golf Club** (w498052430): 18 holes have no readable number
+- **Buckpool Golf Club** (w264905381): 17 holes have no readable number
+- **Budock Vean Golf Club** (w40911425): 3 holes have no readable number; missing hole numbers: [3, 5, 6, 12, 14, 15]
+- **Builth Wells Golf Club** (w897605709): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Bulbury Woods Golf Club** (w173768035): no green: holes 11
+- **Burghley Park Golf Course** (w101219918): 3 holes have no readable number
+- **Burnham & Berrow Golf Club** (w681327981): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Caerphilly Golf Club** (w195609911): 1 holes have no readable number; missing hole numbers: [11]
+- **Caldwell Golf Club** (r19067279): unusual hole count: 1
+- **Camberley Heath Golf Club** (w24150586): unusual hole count: 1
+- **Cannington Golf Centre** (w271010081): unusual hole count: 12
+- **Caprington Golf Club** (w101165916): unusual hole count: 2
+- **Carholme Golf Club** (w42224833): repeated hole numbers: [1]
+- **Castle Eden Golf Club** (w1007485062): 2 holes have no readable number
+- **Castle Hawk Golf Club** (w263842076): no green: holes 8, 9, 17, 18
+- **Castle Point Golf Course** (w100876758): repeated hole numbers: [13]; missing hole numbers: [12]
+- **Cathedral Course** (r17006551): missing hole numbers: [1, 2]; unusual hole count: 16
+- **Cawder Golf Club** (w27757129): unusual hole count: 1
+- **Championship Course** (w1096330520): no green: holes 13
+- **Channels Golf Club** (w111183746): 9 holes have no readable number; no green: holes 9 unnumbered
+- **Chartham Park** (w95934164): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Chartridge Park Golf Club** (w88146822): 4 holes have no readable number; missing hole numbers: [4, 5, 8, 16, 17]
+- **Cherry Burton Golf Course** (w235712067): 1 holes have no readable number
+- **Chesterford Research Park Golf Course** (w320348117): 7 holes have no readable number
+- **Chilwell Manor Golf Course** (r2844182): missing hole numbers: [1, 2, 3, 4, 5, 7, 8]
+- **China Fleet Country Club** (w41204162): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Chorleywood Golf Club** (r12910287): 9 holes have no readable number
+- **Cirencester Golf Club** (w470169455): unusual hole count: 12
+- **Cleckheaton & District Golf Club** (w118917144): 2 holes have no readable number
+- **Clitheroe Golf Course** (w53027347): 2 holes have no readable number; no green: holes 1 unnumbered
+- **Clwb Golff Aberteifi / Cardigan Golf Club** (w118073978): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]; unusual hole count: 14
+- **Cochrane Castle Golf Club** (w116946135): no green: holes 9, 10, 18
+- **Comann Goilf na Hearadh** (w264436455): 1 holes have no readable number; no green: holes 1 unnumbered
+- **Congleton Golf Club** (w446710190): missing hole numbers: [10, 11, 12, 13, 14, 15]; no green: holes 1, 2, 3, 4, 5, 6, 9, 18
+- **Cookridge Hall Golf Course** (w101440124): repeated hole numbers: [1, 10]
+- **Coombe Wood Golf Course** (w22392855): 7 holes have no readable number; unusual hole count: 10
+- **Cosby Golf Club** (w228046266): unusual hole count: 2
+- **Cottesmore Hotel Golf & Country Club** (w421825520): unusual hole count: 7
+- **Cottrell Park Golf Resort** (r19309655): repeated hole numbers: [12]
+- **Coventry Golf Club** (w83520867): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Cowden** (w131354476-cowden): unusual hole count: 1; no green: holes 1
+- **Cowden** (w1464367586-cowden): missing hole numbers: [1]; no green: holes 2, 3, 4, 5, 6, 7, 8, 9
+- **Cradoc Golf Club** (w349932215): 4 holes have no readable number; missing hole numbers: [3, 4, 5, 13, 14]; no green: holes 1, 2, 6, 7, 8, 9, 10, 12, 15, 17, 3 unnumbered
+- **Craggan Golf Course** (w798427072): 8 holes have no readable number
+- **Craigie Hill Golf Course** (w55888009): 1 holes have no readable number; missing hole numbers: [12]; no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 1 unnumbered
+- **Crewe Golf Club** (w231685362): no green: holes 11, 17
+- **Crondon Park Golf & Country Club** (w205993614): unusual hole count: 5
+- **Cuddington Golf Course** (w17750111): no green: holes 4
+- **Cumberwell Park** (w116715891): 9 holes have no readable number; unusual hole count: 36
+- **Dalmuir Municipal Golf Course** (w119321818): 17 holes have no readable number
+- **Dartmouth Golf And Country Club** (w202388839): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Deanwood Park Gold Course** (w1315806794): unusual hole count: 5
+- **Deeside Golf Club** (w8023725): 1 holes have no readable number; missing hole numbers: [10, 16]
+- **Derby** (w4367849-derby): missing hole numbers: [7]
+- **Donnington Grove Country Club** (w219017378): missing hole numbers: [1]; unusual hole count: 8
+- **DoubleTree by Hilton Forest Pines Spa & Golf Resort** (w30861431): 27 holes have no readable number; no green: holes 26 unnumbered
+- **Downes Crediton Golf Club** (r17957891): 5 holes have no readable number; repeated hole numbers: [10]; missing hole numbers: [11, 12]
+- **Downfield** (r10616520): missing hole numbers: [13]; unusual hole count: 16
+- **Drax Golf Club** (w202203038): missing hole numbers: [13, 14, 15, 16, 17]
+- **Dudley Golf Club** (w39045868): 1 holes have no readable number
+- **Dukes Meadows Golf, Tennis & Ski** (w13891693): 7 holes have no readable number
+- **Dulwich and Sydenham Hill Golf Club** (w28237051): 18 holes have no readable number; no green: holes 17 unnumbered
+- **Dunblane New Golf Club** (w104669046): 19 holes have no readable number
+- **Dunning Golf Club** (w240170897): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9
+- **Duns Golf Course** (r20817361): 3 holes have no readable number
+- **Dunston Hall Golf Course** (w291482975): missing hole numbers: [10, 11]
+- **Durness Golf Club** (w114097704): 1 holes have no readable number
+- **Earlswood Golf Course** (w31568219): 4 holes have no readable number
+- **East** (w30097259-east): unusual hole count: 1
+- **East Horton Golf Club** (r1438957): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+- **East Kilbride Golf Club** (w86112626): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **East Renfrewshire Golf Club** (w505865213): 1 holes have no readable number
+- **East Sussex National Golf Resort and Spa** (w30097259): repeated hole numbers: [12, 13, 14, 15, 16, 17, 18]; missing hole numbers: [1, 2]
+- **Eastwell Manor** (w90225345): 7 holes have no readable number
+- **Eastwood Golf Course** (w182189564): 18 holes have no readable number
+- **Eden Course** (w158718157): unusual hole count: 17
+- **Eden Course** (w158718555-eden-course): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+- **Eden Golf Club** (w334488987): 9 holes have no readable number; no green: holes 9 unnumbered
+- **Edinburgh** (w22911115-edinburgh): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18
+- **Edwalton Municipal Golf Course** (w101782603): repeated hole numbers: [1]
+- **Edzell Golf Club** (w397026530): missing hole numbers: [17]
+- **Elsham Golf Club** (w138499173): 18 holes have no readable number; no green: holes 18 unnumbered
+- **Emerald Championship Course** (r16010887): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Erskine Golf Club** (w118460310): 1 holes have no readable number
+- **Etchingham Golf Club - Leas Course** (w98512043): 8 holes have no readable number
+- **Etchingham Golf Club - Valley Course** (w23996941): 18 holes have no readable number
+- **Exeter Golf and Country Golf Club** (w25408953): 2 holes have no readable number; missing hole numbers: [4, 16]
+- **Exminster Golf Centre** (w689512201): no green: holes 6, 7, 8, 9
+- **Fair Isle Lighthouse Keeper's Golf Course** (h1459260104-fair-isle-lighthouse-keeper-s-golf-course): unusual hole count: 6; no green: holes 1, 2, 3, 4, 5, 6
+- **Fakenham Golf Club** (r14691736): 6 holes have no readable number; missing hole numbers: [1, 2, 3, 4, 5]; unusual hole count: 8
+- **Farleigh Golf Club** (w5059692): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Farrington Park Golf & Country Club** (w236696192): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Faversham Golf Course** (w23598563): 18 holes have no readable number; no green: holes 8 unnumbered
+- **Filey Golf Club** (w123185853): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Forbes of Kingennie Golf Course** (w420351408): 9 holes have no readable number
+- **Forest Park Golf Club** (w136957427): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Formby Hall Golf Course** (r20778325-h1524509873): unusual hole count: 1
+- **Forres Golf Club** (w89451534): unusual hole count: 1
+- **Frinton Golf Club** (w33282208): no green: holes 2, 3, 4, 5, 6, 7, 8, 10, 11, 13, 14, 18
+- **Gainsborough Golf Club** (w138762421): 21 holes have no readable number
+- **Gairloch Golf Club** (w250507249): 5 holes have no readable number; missing hole numbers: [1, 3, 4, 5, 8, 10, 12, 13, 14, 17]
+- **Garon Park Golf Complex** (w100791079): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **George Washington Hotel Golf and Spa** (w32994926): 1 holes have no readable number; missing hole numbers: [16]; no green: holes 10, 11, 12, 14
+- **Gillingham Golf Club** (r3369224): 4 holes have no readable number
+- **Girvan** (r3339551): no green: holes 11, 13, 14, 15
+- **Glenalmond College Golf Course** (w244936894): 9 holes have no readable number
+- **Glenisla Golf Course** (w37573505): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9
+- **Glossop & District Golf Club** (w203243723): 2 holes have no readable number; missing hole numbers: [8, 9, 10, 11, 12, 13, 14]; unusual hole count: 16
+- **Gogarburn Golf Course** (w31473433-gogarburn-golf-course): unusual hole count: 12
+- **Gordonstoun Golf Course** (w1178411968): 5 holes have no readable number
+- **Grange Park** (w138508491): 17 holes have no readable number; no green: holes 17 unnumbered
+- **Grange-over-Sands Golf Club** (w70955451): repeated hole numbers: [2]
+- **Gravesend Golf Centre** (r3902075): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]; unusual hole count: 11
+- **Greenway Hall Golf Club** (w407070431): no green: holes 2, 3, 4, 9, 14, 15, 16
+- **Gullane Childrens Course** (w156359056): unusual hole count: 6
+- **Gullane Golf Club** (w1083233390): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+- **Hale Golf Course** (w460351098): missing hole numbers: [1, 2]; unusual hole count: 8
+- **Hale Golf Course** (w460351099): missing hole numbers: [3, 4, 5, 6, 7, 8]
+- **Halesowen Golf Club** (w34075672): no green: holes 6, 10
+- **Harpenden Common Golf Course** (w22776933): missing hole numbers: [3, 4, 5]
+- **Hartland Forest** (w122391021): missing hole numbers: [1, 2, 3, 4, 5]; unusual hole count: 6
+- **Heacham Manor Golf Club** (w478119191): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Henley-in-Arden Golf Course (closed)** (w28609841): 1 holes have no readable number; unusual hole count: 1
+- **Hesketh Golf Club** (w24415869): no green: holes 1, 10, 11, 12, 14
+- **Heswall Golf Course** (w25630303): no green: holes 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Hever Castle Golf Club** (w5069096): 24 holes have no readable number; no green: holes 1 unnumbered
+- **Heworth Golf Course York** (r1596150): unusual hole count: 11
+- **High Gosforth Park Golf Club** (w23066171): no green: holes 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17
+- **Hilton Park Golf Club** (w87148149): repeated hole numbers: [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+- **Hintlesham Golf Club** (r7492025): no green: holes 2
+- **Hirsel Golf Club** (w32854336): no green: holes 12
+- **Hoebridge Golf Centre** (w225180711): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]; no green: holes 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Hollingbury Park Golf Course** (w16231216): unusual hole count: 6
+- **Holme Hall Golf Course** (w30861406): 18 holes have no readable number; no green: holes 15 unnumbered
+- **Holywell Bay Golf Club** (w275828405): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+- **Horne Park Golf Academy** (w98229157): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Horsforth Golf Course** (w103423984): no green: holes 11
+- **Hoylake Golf Club** (w155010556): 1 holes have no readable number; missing hole numbers: [1]
+- **Hunley Golf Club** (w99714940): 27 holes have no readable number
+- **Huntly Golf Club** (w98996719): 3 holes have no readable number
+- **Hurtmore Golf Club** (w57897858): no green: holes 1, 2, 4, 6, 7, 8, 9, 13, 18
+- **Ingrebourne Links Golf Course** (w183480485): 9 holes have no readable number; repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Inverurie Golf Club** (w104374635): 1 holes have no readable number
+- **Irvine Golf Club** (w483675566): unusual hole count: 5
+- **Jacobsen Golf Course** (w1486541061): unusual hole count: 3
+- **Jubilee Course** (w68283454): missing hole numbers: [11]; unusual hole count: 17
+- **Jubilee Course** (w68283454-jubilee-course): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17]
+- **Kempston Course** (w1486103987): 9 holes have no readable number
+- **Kendleshire Golf Club** (w217775138): unusual hole count: 27
+- **Kilmarnock Golf Club Barassie Links** (w248434900): no green: holes 1, 2, 3, 4, 5, 6, 7, 8
+- **Kilsyth Lennox Golfcouse** (w197810448): no green: holes 16
+- **Kingarrock Hickory Golf Course** (w370188680): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9
+- **Kingsdown Golf Club - Academy Course** (w1322366262): unusual hole count: 3
+- **Kirkcaldy Golf Club** (w128632438): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Knotty Hill Golf Centre** (w66536407): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Knutsford Golf Club** (r17023500): 8 holes have no readable number; missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17]
+- **Ladybank Golf Club** (r19698190): 1 holes have no readable number
+- **Langholm Golf Club** (w798533941): 3 holes have no readable number
+- **Larkhall Golf Course** (w23275565): repeated hole numbers: [5, 6, 8, 9]; no green: holes 5, 6, 9
+- **Lauder Golf Club** (w96311510): 8 holes have no readable number
+- **Leek Golf Club** (w93940322): no green: holes 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Leigh Golf Club** (r3996595): 1 holes have no readable number; missing hole numbers: [9, 10, 11, 12, 13, 14, 15, 16, 17]; no green: holes 2
+- **Leslie Golf Club** (w260101300): 9 holes have no readable number
+- **Limpsfield Chart Golf Club** (r14421913): 9 holes have no readable number
+- **Linlithgow Golf Club** (r5434420): repeated hole numbers: [5, 6, 7, 16]; no green: holes 5, 5, 6, 7, 16, 17
+- **Littlehampton Golf Club** (w114182900): 8 holes have no readable number
+- **Littlestone Golf Club** (w91903411): repeated hole numbers: [3, 4, 6, 7, 9, 11, 14, 15]
+- **Lochgilphead Golf Club** (w1348846110): 9 holes have no readable number
+- **Lochmaben Golf Club** (w118591402): unusual hole count: 1
+- **Lochwinnoch Golf Club** (w766679521): 18 holes have no readable number
+- **Long Ashton Golf Club** (r5270693): 20 holes have no readable number
+- **Longley Park** (w79886236): no green: holes 8
+- **Looe Golf Club** (w1235633816): no green: holes 10, 17
+- **Luton Hoo Golf Course** (w1177225274): missing hole numbers: [5, 8]
+- **Lydd Golf Club** (w91929213): no green: holes 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+- **Lynedoch Course** (r20054064-lynedoch-course): unusual hole count: 1; no green: holes 1
+- **Lynedoch Course** (w212440921-lynedoch-course): missing hole numbers: [1, 11]; no green: holes 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18
+- **Machrie Bay Golf Course** (w235281107): 9 holes have no readable number
+- **Machrihanish Links** (w30391822): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Maesdu Golf Club** (r19561246): no green: holes 7
+- **Maesteg Golf Course** (w101518237): unusual hole count: 3
+- **Magdalene Fields** (r3622067): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+- **Main Course** (w1227392854): 27 holes have no readable number; no green: holes 25 unnumbered
+- **Malton & Norton Golf Club** (w264389314): unusual hole count: 27
+- **Manor** (w157488856-manor): 9 holes have no readable number
+- **Market Drayton Golf Club** (w1104790456): 1 holes have no readable number; repeated hole numbers: [9]; missing hole numbers: [16]; no green: holes 2
+- **Matfen Hall Hotel, Golf & Spa** (r3990805): 6 holes have no readable number; no green: holes 6 unnumbered
+- **Maverston Golf Course** (r20293194): 18 holes have no readable number
+- **Melbourne Course** (w1493320697): unusual hole count: 4
+- **Meltham Golf Club** (w119926746): 1 holes have no readable number; missing hole numbers: [11]
+- **Meole Brace Golf Course** (r3975374): unusual hole count: 12
+- **Meon Course** (w99002667): 11 holes have no readable number; missing hole numbers: [4, 7, 9, 10]; unusual hole count: 11
+- **Mid Kent Golf Club** (w4974222): repeated hole numbers: [7, 8, 9, 13]
+- **Milford Haven Golf Course** (w1037849933): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Millfield 9-hole Course** (h918844478-millfield-9-hole-course): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9
+- **Millfield Grenville Course** (h1569553820-millfield-grenville-course): missing hole numbers: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]; no green: holes 1, 2, 17, 18
+- **Millfield Grenville Course** (w89353520-millfield-grenville-course): missing hole numbers: [1, 2]; unusual hole count: 16; no green: holes 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16
+- **Milnathort Golf Club** (w116344990): missing hole numbers: [10, 11, 12, 13, 14, 16]; unusual hole count: 17; no green: holes 1, 3, 4, 5, 6, 15, 17
+- **Minchinhampton Golf Club** (w1172820039): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+- **Montrose Golf Links** (w264889578): 1 holes have no readable number; repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+- **Moor Allerton Golf Course** (w188542182): unusual hole count: 27
+- **Moor Park West Course** (w698907664-moor-park-west-course): missing hole numbers: [1, 2]; unusual hole count: 3
+- **Moor Park West Course** (w7991251-moor-park-west-course): missing hole numbers: [3]
+- **Moortown Golf Club** (w55036476): no green: holes 2, 3, 5, 7, 8, 9, 10, 12, 13, 14, 15, 18
+- **Moray Golf Club** (w102611542): 36 holes have no readable number
+- **Moseley Golf Course** (w23785312): unusual hole count: 1
+- **Mowsbury Golf Course** (w5115182): 2 holes have no readable number
+- **Murrayshall Course** (r20054064-murrayshall-course): missing hole numbers: [7]; no green: holes 1, 2, 3, 4, 5, 6, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Murrayshall Course** (w212440921-murrayshall-course): missing hole numbers: [1, 2, 3, 4, 5, 6, 8, 9, 10]; unusual hole count: 11; no green: holes 7, 11
+- **Myerscough College Golf Complex** (w868687906): 9 holes have no readable number
+- **Mytton Fold Golf Club** (w51995340): repeated hole numbers: [5]; missing hole numbers: [6]; no green: holes 1, 2, 3, 4, 5, 7, 9, 10, 11, 12, 13, 14, 15, 16, 18
+- **Naemoor** (w131354476-naemoor): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9
+- **New Course** (w116586103): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8]
+- **New Course** (w116586103-new-course): unusual hole count: 8
+- **New Course** (w204317950): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **New Course** (w20787843): 17 holes have no readable number; no green: holes 15 unnumbered
+- **Newcastle Golf Club** (w48749101): 16 holes have no readable number; unusual hole count: 1; no green: holes 1, 16 unnumbered
+- **Newport Links Golf Gourse** (w293225431): no green: holes 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Newtonmore Golf Club** (w37697839): 1 holes have no readable number; missing hole numbers: [15]; no green: holes 6
+- **Normanby Hall Golf Course** (w30861480): 18 holes have no readable number; no green: holes 1 unnumbered
+- **North Downs Golf Course** (w5059734): 13 holes have no readable number; no green: holes 1 unnumbered
+- **Northamptonshire County Golf Course** (w146784624): no green: holes 10
+- **Nuneaton Golf Club** (w154901392): no green: holes 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Oak Mead Family Golf (Pitch & Putt)** (w252727592): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9
+- **Oakmere Park Golf Club** (w92322030): unusual hole count: 2
+- **Old Course** (w161115514): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Old Course Ranfurly Golf Club** (r3334165): no green: holes 16
+- **Oldham Golf Club** (w506521776): no green: holes 7
+- **Olton Golf Course** (w24822555): no green: holes 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Onneley Golf Club** (w94827901): no green: holes 11
+- **Ormonde Fields Golf Course** (w174320098): no green: holes 14
+- **Orsett Golf Club** (w94530219): no green: holes 11, 12, 13, 14, 15, 16, 17, 18
+- **Orton Meadows Golf Course** (r4003072): missing hole numbers: [5, 9, 10, 11, 12, 13, 14, 15, 16, 17]; no green: holes 2, 3, 7
+- **Oulton Park Golf Course** (w4344061): unusual hole count: 27
+- **Oundle Golf Club** (w143137061): unusual hole count: 3; no green: holes 1, 2, 3
+- **Outlane Golf Club** (w27140530): no green: holes 16
+- **Owston Hall Golf Course** (w46511744): 3 holes have no readable number; missing hole numbers: [1, 2, 8, 9]
+- **PGA National** (w4367849-pga-national): no green: holes 1
+- **Pachesham Golf Course** (w27178922): unusual hole count: 6
+- **Painswick Golf Course** (r3923273): missing hole numbers: [15, 16]
+- **Palacerigg Golf Club** (w38001013): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Palewell Pitch & Putt** (r3346748): 9 holes have no readable number
+- **Panshanger Golf Complex** (w19803462): unusual hole count: 2
+- **Penwortham Golf Course** (w89875829): unusual hole count: 1
+- **Percy Wood Country Park** (w116846320): 6 holes have no readable number
+- **Piltdown Golf Club** (w99314843): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Pitch and Putt** (w496985968): 5 holes have no readable number
+- **Pitcheroak Golf Course** (w38319204): unusual hole count: 1
+- **Plassey Golf Club** (w1184048475): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9
+- **Port Bannatyne Golf Club** (w389126066): 5 holes have no readable number; missing hole numbers: [1, 2, 3, 4, 5, 13, 14, 15, 16, 17]
+- **Porthpean Golf Club** (r3581426): missing hole numbers: [17]
+- **Portmahomack Golf Club** (r16665047): 10 holes have no readable number; no green: holes 1 unnumbered
+- **Portmore Golf Park** (w361034870): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Portpatrick Dunskey Golf Club** (w264452446): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Poulton Golf Club** (w20365606): 9 holes have no readable number
+- **Poulton le Fylde Golf Club** (w160460136): 2 holes have no readable number
+- **Prestatyn Golf Course** (w41328700): repeated hole numbers: [4]; unusual hole count: 8
+- **Prestbury Golf Club** (w366301164): no green: holes 16
+- **Prestonfield Golf Course** (w5364370): 3 holes have no readable number
+- **Prestwich Golf Course** (w255699559): no green: holes 4
+- **Princes Golf Club** (w24494292): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 9]
+- **Puckrup Hall Golf Club** (w469902090): missing hole numbers: [1, 2, 3, 4, 5, 6, 7]; unusual hole count: 16
+- **Puckrup Hall Golf Club** (w630237211): missing hole numbers: [8, 9, 10, 11, 12, 13, 14, 15, 16]
+- **Queens Park Golf Club** (w25607331): repeated hole numbers: [8]
+- **RAF Cranwell Golf Course** (w157827719): 4 holes have no readable number; no green: holes 2 unnumbered
+- **Radnor Golf and Leisure** (w540388020): 9 holes have no readable number
+- **Ralston Golf Course** (w10590575): 1 holes have no readable number; unusual hole count: 17
+- **Rampside Golf** (w1052269006): unusual hole count: 10
+- **Ramsdale Golf Centre** (w43327663): repeated hole numbers: [1, 2, 5]; no green: holes 3, 4, 10
+- **Raon Goilf Beinn na Faoghla** (w250509464): missing hole numbers: [3, 12]
+- **Ravenmeadow Golf Club** (r14169688): missing hole numbers: [9, 10, 11, 12, 13, 14, 15, 16, 17]
+- **Ravenmeadow Golf Club** (r14190286): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8]; unusual hole count: 17
+- **Reading Golf Club** (w28905123): missing hole numbers: [1, 2, 3, 4]; unusual hole count: 16
+- **Redbourn Golf Club** (w116515157): no green: holes 3
+- **Redditch Golf Course** (r3802120): 6 holes have no readable number; unusual hole count: 8
+- **Rhondda Golf Club** (w551678064): 17 holes have no readable number; no green: holes 12
+- **Rhuddlan Golf Course** (w68922384): unusual hole count: 4; no green: holes 1
+- **Richmond Park Golf Course** (w4268580): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+- **Ringway Golf Club** (r16171366): 9 holes have no readable number; no green: holes 9 unnumbered
+- **Rishton Golf Club** (w1392303658): 1 holes have no readable number
+- **Rishton Golf Club** (w4819948): 10 holes have no readable number; no green: holes 5 unnumbered
+- **Rochdale Golf Course** (w185624918): 18 holes have no readable number; no green: holes 1 unnumbered
+- **Rodway Hill Golf Club** (w1171435920): no green: holes 10
+- **Romford Golf Club** (w4289772): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16
+- **Roodlea Golf Course** (w383576560): unusual hole count: 10; no green: holes 9
+- **Rossendale Golf Club** (w341327834): unusual hole count: 2
+- **Rothes Golf Course** (w1486866982): 9 holes have no readable number
+- **Rothesay Golf Club** (w1120633605): no green: holes 17
+- **Rothley Park Golf Club** (w192914613): no green: holes 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Royal Ashdown Forest Golf Club** (w102712791): unusual hole count: 5; no green: holes 2, 3, 4, 5
+- **Royal Mid-Surrey Golf Club** (w4794012): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+- **Royal Norwich Golf Club** (w1228634799): 1 holes have no readable number
+- **Rufford Park Golf and Country Club** (w31545228): 1 holes have no readable number
+- **Ruislip Golf Course** (r17099119): missing hole numbers: [1, 2]; unusual hole count: 5
+- **Rushcliffe Golf Club** (w31545981): no green: holes 6
+- **Rustington Golf Centre** (w219189310): no green: holes 4, 5, 6, 8, 9
+- **Rutland Water** (w1356133583): no green: holes 14, 17
+- **Saline Golf Course** (w120547544): missing hole numbers: [10, 11, 12, 17]; no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 14, 15, 16, 18
+- **Sandfield Golf Course and Driving Range** (w34326168): no green: holes 4, 5, 6
+- **Sandford Springs Hotel & Golf Club** (w203707176): repeated hole numbers: [10, 11, 12, 13, 14, 15, 16, 17, 18]
+- **Saphire Course** (w309425171): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Saunton Golf Course** (r9452839): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+- **Schawpark Golf course** (w87241464): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+- **Scoonie Golf Course** (w133739387): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16
+- **Seacroft Golf Course** (w414822521): 1 holes have no readable number; repeated hole numbers: [2]; no green: holes 5, 6, 8
+- **Sedlescombe Golf Club** (w34282220): 1 holes have no readable number; missing hole numbers: [9]
+- **Shaldon Approach Golf (Pitch & Putt)** (w131709488): unusual hole count: 17
+- **Sherwood Forest Golf Club** (w310583846): 1 holes have no readable number
+- **Shipton Golf Course** (w282403781): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9
+- **Shirley Golf Club** (w28658648): no green: holes 17
+- **Short Course** (w1227551526): 18 holes have no readable number; no green: holes 18 unnumbered
+- **Shotts Golf Club** (w174186602): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Shrivenham Park Golf Club** (r19344635): no green: holes 18
+- **Sickleholme Golf Club** (w238309781): no green: holes 4, 9, 13, 14, 15, 16, 17
+- **Slaley Hall Golf Club** (r11052947): no green: holes 13, 15
+- **South Essex Golf Centre** (w23618344): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **South Pembrokeshire Golf Club** (w1493746473): missing hole numbers: [8, 9, 10, 11, 12]
+- **South Petersfield Golf Club** (w141850322): unusual hole count: 12
+- **South Ronaldsay Golf Course** (w180229292): 9 holes have no readable number; no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Southport Old Links Golf Club** (w24416172): 9 holes have no readable number
+- **Southwell Golf Club** (w380370799): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Sprowston Manor Golf Club** (w131544771): no green: holes 9
+- **St Austell Golf Course** (w704180044): 1 holes have no readable number; repeated hole numbers: [5, 13, 14]
+- **St Fillans Golf Club** (w492531537): 9 holes have no readable number
+- **St George's Hill Golf Club** (r2712842): 9 holes have no readable number
+- **St Idloes Golf Club** (w494775841): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9
+- **St Kew Golf Club** (w299926511): 9 holes have no readable number
+- **St Pierre** (w113842043): missing hole numbers: [1, 2, 3, 4]; unusual hole count: 5
+- **St Pierre Mathern Course** (w1208750167): no green: holes 3, 6
+- **St Pierre Old Course** (w1208750149): missing hole numbers: [5]
+- **St. Cuthbert Golf Club** (w43546578): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Staddon Heights Golf Club** (r14265789): no green: holes 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Stand Golf Club** (r3883278): 15 holes have no readable number; no green: holes 1 unnumbered
+- **Stocksfield Golf Club** (w138929822): 17 holes have no readable number; no green: holes 17 unnumbered
+- **Stockwood Park Golf Centre** (w840019869): no green: holes 12
+- **Stoke Park Golf Course** (w33118679): missing hole numbers: [7]; unusual hole count: 27; no green: holes 22
+- **Stone Golf Course** (w251501250): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9
+- **Stonebridge Golf Course** (w99208834): 9 holes have no readable number
+- **Stoneham Golf Club** (w22820882): missing hole numbers: [3]; unusual hole count: 4
+- **Stoneleigh Deer Park Golf Club** (w23945737): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Strathmore Golf Centre** (w37573407): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]; no green: holes 15
+- **Struie Course** (w717154314): 1 holes have no readable number
+- **Struie Course** (w717154314-struie-course): no green: holes 7, 9, 14
+- **Sturminster Marshall Golf Club** (w233004534): no green: holes 5, 6, 7, 8, 9
+- **Styal Golf Club** (w5259571): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Sunbury Golf** (w163062713): 18 holes have no readable number; no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 18 unnumbered
+- **Sunningdale Golf Club** (r15410213): 11 holes have no readable number
+- **Surrey National Golf Club** (w160465135): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+- **Sutton Coldfield Golf Club** (w4367848): repeated hole numbers: [1]
+- **Sutton Green Golf Club** (w24634115): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Swallow Hall Golf Course** (w186258825): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Swanston Golf Course** (r2882361): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Tain Golf Club** (w263222466): unusual hole count: 1
+- **Tarbert Golf Club** (r3425604): 10 holes have no readable number
+- **Telford Hotel And Golf Resort** (r945678): no green: holes 6, 12
+- **Temple Newsam Golf Course** (w155347166): repeated hole numbers: [4, 7, 14]; missing hole numbers: [13]; no green: holes 2, 5, 7, 7, 10, 11, 12, 14, 14, 15, 16, 17, 18
+- **Thames Ditton and Esher Golf Club** (r3345292): 7 holes have no readable number; missing hole numbers: [2, 4, 5, 6, 7, 8, 9, 11]; unusual hole count: 12
+- **The Belfry** (w4367849): missing hole numbers: [1, 2, 3, 4, 5, 6]; unusual hole count: 7
+- **The Carlyon Bay Hotel Golf Club** (r3883235): 1 holes have no readable number
+- **The Chase Golf Club** (w87235852): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **The Club at Mapledurham** (w499952509): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; unusual hole count: 13
+- **The Club at Mapledurham** (w499952512): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 13]; unusual hole count: 17
+- **The Club at Mapledurham** (w51065707): missing hole numbers: [10, 11, 12, 13, 14, 15, 16, 17]
+- **The Dorset Golf & Country Club & Resort** (w185215212): 9 holes have no readable number
+- **The Downs Course** (w166937233): missing hole numbers: [1]; unusual hole count: 16
+- **The Gallops Golf Course** (w298828565): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9
+- **The Hampshire Golf Club** (w179613933): 9 holes have no readable number
+- **The Hertfordshire Golf & Country Club** (r3345324): unusual hole count: 3; no green: holes 3
+- **The Inspiration Club** (w1443340912): 5 holes have no readable number; repeated hole numbers: [13]
+- **The Kidderminster Golf Club** (r3997265): unusual hole count: 7; no green: holes 4, 6, 7
+- **The Lottbridge Golf Club** (w24783296): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **The Mendip Golf Club** (w23256944): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **The Montgomery** (w1432241027): no green: holes 9
+- **The Mount Golf & Country Club** (w160826326): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **The Nestie** (w1459805269): 5 holes have no readable number
+- **The Oaks** (w145565160-the-oaks): unusual hole count: 12
+- **The Oaks Horley Course** (w1551802405): missing hole numbers: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+- **The Orchards Holiday Village Golf Course** (w129119853): 9 holes have no readable number; no green: holes 9 unnumbered
+- **The Ridge Golf Club** (w94361166): 16 holes have no readable number; no green: holes 1 unnumbered
+- **The Rolls of Monmouth Golf Club** (r14209060): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **The South Buckinghamshire Golf Course** (w197139095): 17 holes have no readable number
+- **The Vale Golf and Country Club** (r8880581): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **The Wisley** (w172109992): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **The Woldingham Golf Club** (w5059697): unusual hole count: 5
+- **Thorn Park Golf Centre** (w491594467): 9 holes have no readable number
+- **Thornbury Golf Centre** (w23109560): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+- **Thorpe Wood Golf Course** (w367086948): no green: holes 18
+- **Three Rivers Golf & Country Club** (w160284665): 1 holes have no readable number
+- **Tilsworth Golf Course** (w29421238): 18 holes have no readable number
+- **Todmorden Golf Club** (w130460458): missing hole numbers: [10, 11, 12, 13, 14, 15]; unusual hole count: 16
+- **TopGolf Surrey** (w161997874): 9 holes have no readable number; no green: holes 9 unnumbered
+- **Torquay Golf Club** (w26280801): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17
+- **Town Meadow Golf Course** (w128852665): 2 holes have no readable number
+- **Tracy Park Golf & Country Park** (w102016757): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+- **Tredegar and Rhymney Golf Course** (w1229181551): 17 holes have no readable number
+- **Trefloyne Park Golf Club** (r19102126): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Treloy Golf Club** (w830310928): 9 holes have no readable number
+- **Troon Fullarton** (r3362923): 18 holes have no readable number
+- **Troon Lochgreen** (r3339559): missing hole numbers: [4, 5, 6, 7, 8]
+- **Tunshill Golf Club** (r21755624): missing hole numbers: [3, 4, 5, 6, 7, 8]
+- **Turnberry** (w46421398): 1 holes have no readable number; repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+- **Turriff Golf Club** (w888216717): 2 holes have no readable number; missing hole numbers: [1, 2, 3]; unusual hole count: 4
+- **Ullapool Golf Club** (w215302777): 9 holes have no readable number; no green: holes 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 6 unnumbered
+- **Upchurch River Valley South Course** (w244589932): unusual hole count: 1
+- **Uxbridge Golf Course** (w30450381): unusual hole count: 12
+- **Vale Royal Golf Club** (w18944190): no green: holes 1, 9
+- **Vale of Leven Golf Club** (w624042884): unusual hole count: 7
+- **Vale of Llangollen Golf Club** (w290606079): unusual hole count: 17; no green: holes 4
+- **Verulam Golf Club** (w4269168): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Walton Heath Golf Course** (w22084377): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+- **Wandlebury** (r19898500): missing hole numbers: [1, 2, 3, 4]; unusual hole count: 5
+- **Wandlebury** (r19898500-wandlebury): missing hole numbers: [5]
+- **Warrington Golf Club** (w21368979): no green: holes 1
+- **Warwickshire Golf and Country Club** (w56758512): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+- **Watergarden** (w601828399-watergarden): 5 holes have no readable number; missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]; unusual hole count: 13
+- **Wee Course** (w303489684): unusual hole count: 6
+- **Wee Course** (w914767620): 2 holes have no readable number; missing hole numbers: [1, 2, 3, 6, 7, 8]
+- **Wellington** (r1397034-wellington): no green: holes 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Wellow Golf Club** (w126027704): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Welshpool Golf Club** (w379158740): 1 holes have no readable number
+- **West** (w30097259-west): unusual hole count: 11
+- **West Byfleet Golf Club** (w23060246): 1 holes have no readable number; missing hole numbers: [5]
+- **West End Golf Club** (w108243572): 1 holes have no readable number; unusual hole count: 15; no green: holes 7, 9, 12, 13, 14
+- **West Kent Golf Club** (w5107760): 16 holes have no readable number; no green: holes 16 unnumbered
+- **West Monmouthshire Golf Club** (r21393679): no green: holes 1, 4, 10
+- **West Wilts Golf Club** (w167236787): 2 holes have no readable number
+- **Westgate and Birchington Golf Club** (r3349883): 15 holes have no readable number
+- **Westhill Golf Club** (w7734340): 19 holes have no readable number
+- **Westray Golf Club** (w925336235): 9 holes have no readable number
+- **Wexham Park Golf Centre** (r17773601): 3 holes have no readable number; no green: holes 3 unnumbered
+- **Weybrook Park Golf Club** (w38451475): no green: holes 14, 15, 16, 17, 18
+- **Wharton Park Golf & Country Club** (w369347465): unusual hole count: 1
+- **Wheathill Golf Club** (w491101796): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Whitchurch Golf Club** (w26214347): no green: holes 5
+- **Whitefield Golf Club** (w40316490): no green: holes 11
+- **Whitefields Golf Course** (w134799558): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Whitley Golf Club** (w105154370): no green: holes 1
+- **Whittington Heath Golf Club** (w123343014): unusual hole count: 1
+- **Whittlebury Hall Golf Course** (w480511798): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Wick Golf Club** (w264433546): 18 holes have no readable number
+- **Wigan Golf Course** (r3425225): no green: holes 9
+- **Wike Ridge** (w145565160-wike-ridge): missing hole numbers: [3]
+- **Wimbledon Common Golf Club & London Scottish Golf Club** (w182023371): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14]; unusual hole count: 16
+- **Winter Hill Golf Course** (w33102126): no green: holes 6, 7, 9, 10, 11, 12, 13, 14, 18
+- **Withernsea Golf Club** (w148753397): no green: holes 1, 2, 8
+- **Wokefield Estate Golf Club** (r16565103): no green: holes 12
+- **Woll Golf Course** (w368973874): repeated hole numbers: [2, 4, 6, 8, 9, 10, 11, 12, 13, 15, 16, 17]; no green: holes 1, 2, 2, 3, 4, 4, 5, 6, 6, 7, 8, 8, 9, 9, 10, 10, 11, 11
+- **Wollaton Park Golf Club** (w29402952): missing hole numbers: [1]; unusual hole count: 7
+- **Wollaton Park Golf Club** (w30546612): missing hole numbers: [2, 3, 4, 5, 6, 7]
+- **Wolstanton Golf Club** (w48747192): 18 holes have no readable number; no green: holes 18 unnumbered
+- **Woodspring Golf & Country Club** (w788951035): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Woolfox** (w478035311): unusual hole count: 1
+- **Woolton Golf Club** (w402174824): repeated hole numbers: [2]; missing hole numbers: [9, 10, 11, 12, 13, 14, 15, 16]
+- **Woolton Golf Club** (w5079007): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8]; unusual hole count: 16
+- **Worthing Golf Club** (r12639718): 19 holes have no readable number
+- **east** (w30097259-east): missing hole numbers: [1]; unusual hole count: 2
+- **old** (w170557767-old): no green: holes 1
+
+## Skipped
+
+- way/24551089: unnamed outline with no holes
+- way/28744773: unnamed outline with no holes
+- way/31281792: unnamed outline with no holes
+- way/95629366: unnamed outline with no holes
+- way/102736723: unnamed outline with no holes
+- way/147486553: unnamed outline with no holes
+- way/151749369: unnamed outline with no holes
+- way/156938180: unnamed outline with no holes
+- way/170236914: unnamed outline with no holes
+- way/181283179: unnamed outline with no holes
+- way/181286667: unnamed outline with no holes
+- way/181286670: unnamed outline with no holes
+- way/181752054: unnamed outline with no holes
+- way/196841494: unnamed outline with no holes
+- way/203292351: unnamed outline with no holes
+- way/210116484: unnamed outline with no holes
+- relation/19043841: unnamed outline with no holes
+- way/226972886: unnamed outline with no holes
+- way/234423749: unnamed outline with no holes
+- way/249529996: unnamed outline with no holes
+- way/253092358: unnamed outline with no holes
+- way/264645541: unnamed outline with no holes
+- way/281508032: unnamed outline with no holes
+- way/291204477: unnamed outline with no holes
+- way/291204487: unnamed outline with no holes
+- way/295858594: unnamed outline with no holes
+- way/295892569: unnamed outline with no holes
+- way/311021128: unnamed outline with no holes
+- way/313290673: unnamed outline with no holes
+- way/315423947: unnamed outline with no holes
+- way/332829500: unnamed outline with no holes
+- way/337832057: unnamed outline with no holes
+- way/368476051: unnamed outline with no holes
+- way/385844877: unnamed outline with no holes
+- way/387943420: unnamed outline with no holes
+- way/390308066: unnamed outline with no holes
+- way/396414955: unnamed outline with no holes
+- way/396780656: unnamed outline with no holes
+- way/398111731: unnamed outline with no holes
+- way/400675225: unnamed outline with no holes
+- way/402703020: unnamed outline with no holes
+- way/404482091: unnamed outline with no holes
+- way/404482096: unnamed outline with no holes
+- way/409975144: unnamed outline with no holes
+- way/422311956: unnamed outline with no holes
+- way/422468129: unnamed outline with no holes
+- way/444877527: unnamed outline with no holes
+- way/471245348: unnamed outline with no holes
+- way/486888102: unnamed outline with no holes
+- way/486891147: unnamed outline with no holes
+- way/487061774: unnamed outline with no holes
+- way/502119678: unnamed outline with no holes
+- way/512580825: unnamed outline with no holes
+- way/516248203: unnamed outline with no holes
+- way/517405942: unnamed outline with no holes
+- way/528754547: unnamed outline with no holes
+- way/541157417: unnamed outline with no holes
+- way/568377151: unnamed outline with no holes
+- way/576355154: unnamed outline with no holes
+- way/582061298: unnamed outline with no holes
+- way/592455311: unnamed outline with no holes
+- way/604003888: unnamed outline with no holes
+- way/619512020: unnamed outline with no holes
+- way/628059232: unnamed outline with no holes
+- relation/8779207: unnamed outline with no holes
+- way/642185614: unnamed outline with no holes
+- way/678624953: unnamed outline with no holes
+- way/682302866: unnamed outline with no holes
+- way/714414824: unnamed outline with no holes
+- way/727155233: unnamed outline with no holes
+- way/755440069: unnamed outline with no holes
+- way/763168798: unnamed outline with no holes
+- way/779613017: unnamed outline with no holes
+- way/784758496: unnamed outline with no holes
+- way/796702693: unnamed outline with no holes
+- way/812614002: unnamed outline with no holes
+- way/823073253: unnamed outline with no holes
+- way/840019868: unnamed outline with no holes
+- way/844826092: unnamed outline with no holes
+- way/845973962: unnamed outline with no holes
+- relation/11627520: unnamed outline with no holes
+- way/852163455: unnamed outline with no holes
+- way/881877049: unnamed outline with no holes
+- way/884366198: unnamed outline with no holes
+- way/887953114: unnamed outline with no holes
+- way/908538347: unnamed outline with no holes
+- relation/12549516: unnamed outline with no holes
+- way/929847386: unnamed outline with no holes
+- way/956146762: unnamed outline with no holes
+- way/981345509: unnamed outline with no holes
+- way/1003991786: unnamed outline with no holes
+- way/1012772174: unnamed outline with no holes
+- way/1027694087: unnamed outline with no holes
+- way/1032543223: unnamed outline with no holes
+- way/1033352014: unnamed outline with no holes
+- way/1054276132: unnamed outline with no holes
+- way/1087377846: unnamed outline with no holes
+- way/1149882579: unnamed outline with no holes
+- way/1157941040: unnamed outline with no holes
+- way/1159224012: unnamed outline with no holes
+- way/1161785795: unnamed outline with no holes
+- way/1164495610: unnamed outline with no holes
+- way/1174573602: unnamed outline with no holes
+- way/1180158619: unnamed outline with no holes
+- way/1187356876: unnamed outline with no holes
+- way/1206902053: unnamed outline with no holes
+- way/1213876012: unnamed outline with no holes
+- way/1222187563: unnamed outline with no holes
+- way/1230917853: unnamed outline with no holes
+- way/1244076819: unnamed outline with no holes
+- relation/17347341: unnamed outline with no holes
+- way/1263335552: unnamed outline with no holes
+- way/1283417514: unnamed outline with no holes
+- way/1290881595: unnamed outline with no holes
+- way/1352133722: unnamed outline with no holes
+- way/1361836859: unnamed outline with no holes
+- way/1394213336: unnamed outline with no holes
+- way/1415620633: unnamed outline with no holes
+- way/1426104219: unnamed outline with no holes
+- way/1453158715: unnamed outline with no holes
+- way/1551815369: unnamed outline with no holes
+- way/1573649985: unnamed outline with no holes

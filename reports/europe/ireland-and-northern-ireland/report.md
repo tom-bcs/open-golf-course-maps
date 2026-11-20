@@ -1,0 +1,294 @@
+# Quality report: europe/ireland-and-northern-ireland
+
+Source data: 2026-11-19T21:22:20Z. © OpenStreetMap contributors (ODbL 1.0).
+
+- Courses: 575
+- ready: 96
+- partial: 188
+- outline: 291
+- Skipped: 91
+
+## Partial courses
+
+- **h1161638282** (h1161638282): missing hole numbers: [1]; unusual hole count: 2
+- **h1191290184** (h1191290184): 9 holes have no readable number; no green: holes 9 unnumbered
+- **h1217167150** (h1217167150): 11 holes have no readable number; no green: holes 11 unnumbered
+- **h1257104183** (h1257104183): 18 holes have no readable number
+- **h1278128708** (h1278128708): missing hole numbers: [8, 9, 10, 11, 12, 13, 14, 15]; unusual hole count: 16
+- **h1446970168** (h1446970168): 8 holes have no readable number
+- **h283360988** (h283360988): 10 holes have no readable number; no green: holes 1 unnumbered
+- **r12834529** (r12834529): 10 holes have no readable number
+- **r14230793** (r14230793): 16 holes have no readable number; no green: holes 1 unnumbered
+- **r15553759** (r15553759): 18 holes have no readable number
+- **r2197473** (r2197473): 4 holes have no readable number
+- **r3631965** (r3631965): 18 holes have no readable number; no green: holes 17 unnumbered
+- **r4434081** (r4434081): 17 holes have no readable number
+- **r4681417** (r4681417): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9
+- **r5606835** (r5606835): 17 holes have no readable number
+- **r5878011** (r5878011): missing hole numbers: [1, 2, 3, 4, 5, 6, 7]; unusual hole count: 16
+- **r6393969** (r6393969): no green: holes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **w1188859366** (w1188859366): missing hole numbers: [4]
+- **w1211629389** (w1211629389): 13 holes have no readable number; no green: holes 1 unnumbered
+- **w1413316758** (w1413316758): unusual hole count: 6; no green: holes 1, 4
+- **w174303671** (w174303671): repeated hole numbers: [7]; missing hole numbers: [8]; no green: holes 2, 4, 5, 6, 7, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **w175191747** (w175191747): missing hole numbers: [12]
+- **w184732032** (w184732032): 6 holes have no readable number; no green: holes 6 unnumbered
+- **w187420630** (w187420630): 18 holes have no readable number
+- **w194378149** (w194378149): unusual hole count: 1; no green: holes 1
+- **w207739293** (w207739293): 17 holes have no readable number
+- **w217936695** (w217936695): 3 holes have no readable number
+- **w263655515** (w263655515): 17 holes have no readable number
+- **w365415990** (w365415990): missing hole numbers: [12, 13, 14, 15, 16]
+- **w365415995** (w365415995): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]; unusual hole count: 16
+- **w52403200** (w52403200): 9 holes have no readable number
+- **w547901652** (w547901652): 9 holes have no readable number
+- **w592494847** (w592494847): unusual hole count: 10
+- **7 Hole Golf Course Grange Castle** (w837936720): unusual hole count: 7
+- **Adare Manor Golf Club** (w266418244): 18 holes have no readable number; no green: holes 1 unnumbered
+- **Adare Manor Hotel & Golf Resort Ireland** (w283343615): 13 holes have no readable number
+- **Ardee Golf Club** (w719676507): 18 holes have no readable number; no green: holes 12 unnumbered
+- **Ashbourne Golf Club** (w221327757): 18 holes have no readable number
+- **Athenry Golf Club** (w849194204): 17 holes have no readable number
+- **Balbriggan Golf Club** (w23591358): 18 holes have no readable number; no green: holes 15 unnumbered
+- **Balcarrick Golf Club** (w51097008): 18 holes have no readable number; no green: holes 5 unnumbered
+- **Balheary Par 3** (w23388304): 18 holes have no readable number; no green: holes 7 unnumbered
+- **Ballina Golf Course** (r12881933): 18 holes have no readable number
+- **Ballinteskin Par 3 Golf Course** (w242215228): 9 holes have no readable number; no green: holes 8 unnumbered
+- **Ballybunion Golf Club** (r19920899): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18]
+- **Ballymoney Golf Course** (w28517535): 19 holes have no readable number; no green: holes 19 unnumbered
+- **Baltray Golf Club** (r4856415): 18 holes have no readable number
+- **Bandon Golf Club** (w199908668): 17 holes have no readable number; no green: holes 2 unnumbered
+- **Bangor Golf Club** (r4621702): no green: holes 15
+- **Beaverstown Golf Club** (w23403847): 1 holes have no readable number
+- **Bellewstown Golf Course** (w286271592): unusual hole count: 2
+- **Birr Golf Club** (w185001299): missing hole numbers: [3]
+- **Black Bush Golf Club** (w42733614): 27 holes have no readable number
+- **Blarney Golf Resort** (r6167831): 18 holes have no readable number; no green: holes 1 unnumbered
+- **Carne Golf Links** (r5771092): 27 holes have no readable number; no green: holes 1 unnumbered
+- **Carrick on Shannon Golf Club** (r3198918): repeated hole numbers: [10]; missing hole numbers: [11]
+- **Carrickmines Golf Course** (w28921961): no green: holes 18
+- **Castle Barna Golf Club** (w148399996): 18 holes have no readable number; no green: holes 1 unnumbered
+- **Castle Golf Club** (r2643863): 1 holes have no readable number
+- **Castlegregory Golf Links** (w231515504): 9 holes have no readable number
+- **Castleknock Golf and Country Club** (w50897169): 16 holes have no readable number
+- **Castlerock Golf Club** (w284407631): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Celbridge Elm Hall Golf Course** (w765557552): 7 holes have no readable number; unusual hole count: 2
+- **Clonmel Golf Course** (w173103572): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]; unusual hole count: 17
+- **Cobh Golf Club** (r5959584): 18 holes have no readable number
+- **Collins pitch & putt club** (w104004980): 1 holes have no readable number
+- **Concra Wood Golf Club** (w721962532): 18 holes have no readable number; no green: holes 13 unnumbered
+- **Connemara Golf Club** (w177866566): 26 holes have no readable number
+- **Cork Golf Club** (r6120083): 1 holes have no readable number
+- **County Longford Golf Club** (w177769330): 1 holes have no readable number; missing hole numbers: [2]
+- **County Sligo Golf Club** (w217937588): 4 holes have no readable number; no green: holes 18
+- **Cregmore Park Golf Club** (w1051681319): 18 holes have no readable number
+- **Deer Park Golf Course** (w135411053): unusual hole count: 17; no green: holes 1
+- **Donabate Golf Club** (w51097609): 27 holes have no readable number; no green: holes 22 unnumbered
+- **Dooks Golf Club** (w224531699): 18 holes have no readable number; no green: holes 1 unnumbered
+- **Druids Glenn Golf Resort, Wicklow** (w86501926): 17 holes have no readable number; unusual hole count: 1; no green: holes 15 unnumbered
+- **Dublin Mountain Golf Club** (w58467692): 1 holes have no readable number; missing hole numbers: [10, 11, 12, 13, 14, 15, 16, 17]
+- **Dundalk Golf Club** (w145359524): 18 holes have no readable number; no green: holes 1 unnumbered
+- **Dundrum House Golf Course** (r11551241): 1 holes have no readable number; missing hole numbers: [3]
+- **Dungannon Golf Club** (w508153681): no green: holes 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+- **Dungarvan Golf Club** (w71366764): 18 holes have no readable number; no green: holes 18 unnumbered
+- **Dunluce Links** (w1413316756): no green: holes 13, 17
+- **Edmondstown Golf Club** (w24033779): repeated hole numbers: [13]; missing hole numbers: [1]
+- **Elm Park Golf and Sports Club** (w23017412): 14 holes have no readable number; missing hole numbers: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+- **Ennis Golf Club** (w222331807): 2 holes have no readable number
+- **Enniscrone Golf Club** (w87249902): unusual hole count: 11; no green: holes 10
+- **Enniskillen Golf Club** (r3808523): no green: holes 7, 16, 17, 18
+- **Esker Hills Golf Club** (w172597638): 17 holes have no readable number
+- **Faithlegg Golf Club** (w146203027): no green: holes 8, 16
+- **Fermoy Golf Club** (w399489265): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Forrest Little Golf Club** (w23511273): 4 holes have no readable number; no green: holes 1 unnumbered
+- **Foxrock Golf Course** (w28889105): no green: holes 6
+- **Glen Mill Golf Club** (w114127823): unusual hole count: 2
+- **Gold Coast Golf Course** (w33793611): 16 holes have no readable number; no green: holes 16 unnumbered
+- **Grange Golf Club** (w23564638): 10 holes have no readable number
+- **Greystones Golf Club** (w56057668): 5 holes have no readable number
+- **Headfort Golf Glub** (r12882627): 15 holes have no readable number
+- **Hermitage Golf Club** (w1081730324): repeated hole numbers: [10]
+- **Hilton Templepatrick Golf Course** (w133434501): no green: holes 14
+- **Hodson Bay Golf Course** (w150029738): 16 holes have no readable number
+- **K Club - The Palmer North** (w98960980): no green: holes 5
+- **Kanturk Golf Club** (w772978359): 1 holes have no readable number
+- **Kilkenny Golf Club** (w49002353): 1 holes have no readable number
+- **Killarney Golf & Fishing Club** (w1571483427): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+- **Killymoon Golf Club** (w252652594): no green: holes 8, 15
+- **Kilrea Golf Course** (w1230344148): 1 holes have no readable number; unusual hole count: 10; no green: holes 1, 10
+- **Kinsale Golf Club** (w75801795): 19 holes have no readable number; no green: holes 1 unnumbered
+- **Knightsbrook Golf Club** (r4551692): 18 holes have no readable number; no green: holes 1 unnumbered
+- **Laytown & Bettystown Links Golf Club** (w713048827): 20 holes have no readable number; no green: holes 1 unnumbered
+- **Lee Valley Golf & Country Club** (r9767077): 17 holes have no readable number
+- **Limerick Golf Club** (w27232184): 18 holes have no readable number
+- **Lismore Golf Club** (w898238919): 6 holes have no readable number
+- **Lismore Golf Club** (w898238920): 4 holes have no readable number
+- **Lucan Golf Club** (r4477425): 12 holes have no readable number
+- **Lucan Golf Club** (w23527595): 5 holes have no readable number
+- **Luttrellstown Golf Course** (w38690403): 18 holes have no readable number
+- **Macreddin Golf Course** (w278015824): 7 holes have no readable number; no green: holes 7 unnumbered
+- **Macreddin Golf Course** (w278015825): 9 holes have no readable number; no green: holes 9 unnumbered
+- **Macroom Golf Course** (w398396868): 17 holes have no readable number; no green: holes 1 unnumbered
+- **Malahide Golf Club** (w25529736): 24 holes have no readable number
+- **Mallow Golf Club** (w94975693): 7 holes have no readable number
+- **Malone Golf Club** (w38652468): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Massereene Golf Club** (w198386249): repeated hole numbers: [2]; no green: holes 2
+- **Mellows Pitch & Putt** (w159553778): 2 holes have no readable number
+- **Millicent Golf Club** (r2072511): 1 holes have no readable number; missing hole numbers: [16]
+- **Mitchelstown Golf Course** (w184732037): 10 holes have no readable number; no green: holes 10 unnumbered
+- **Moate Golf Course** (w155515704): 1 holes have no readable number
+- **Monkstown Golf Club** (r7734408): 18 holes have no readable number; no green: holes 1 unnumbered
+- **Mount Temple Golf Course** (w828810933): 1 holes have no readable number
+- **Mountain View Golf Course** (w281389260): 17 holes have no readable number; no green: holes 16 unnumbered
+- **Moyola Park** (w542436987): repeated hole numbers: [1]; no green: holes 1, 6
+- **Moyvalley** (w263841644): unusual hole count: 14
+- **Mullingar Golf Club** (w179100933): 18 holes have no readable number
+- **Mulranny Golf Club** (r5805241): 1 holes have no readable number; missing hole numbers: [1]
+- **Muskerry Golf Course** (w128991232): 1 holes have no readable number; repeated hole numbers: [3, 4]
+- **Newlands Golf Course** (w28513446): 1 holes have no readable number; missing hole numbers: [9]
+- **Newtownstewart Golf Club** (w508141751): 1 holes have no readable number; no green: holes 1 unnumbered
+- **Nuremore Hotel & Country Club** (w1225317294): 18 holes have no readable number; no green: holes 18 unnumbered
+- **Omagh Golf Club** (r19313752): missing hole numbers: [16]; no green: holes 2, 4, 5, 6, 7, 8, 9, 13, 17
+- **Palmerstown House Estate** (w1523051923): no green: holes 8, 9
+- **Portadown Golf Club** (w409244100): 2 holes have no readable number; missing hole numbers: [5, 12]
+- **Portarlington Golf Club** (w75589299): unusual hole count: 6
+- **Portlaoise Golf Club** (w62763512): 16 holes have no readable number
+- **Powerscourt Golf Club** (w35290051): 32 holes have no readable number; no green: holes 3 unnumbered
+- **Ranges Pitch and Putt Ballincollig** (w1212349577): 16 holes have no readable number
+- **Rathbane Golf Course** (w115836932): 18 holes have no readable number
+- **Rathfarnham Golf Club** (w29293609): 1 holes have no readable number; missing hole numbers: [12]
+- **Riverside - Portstewart Golf Club** (w447240646): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17]
+- **Roganstown Golf and Country Club** (r4447470): 16 holes have no readable number; no green: holes 6 unnumbered
+- **Rosapenna Golf Course** (w455514544): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+- **Rosapenna Golf Course** (w455952299): 1 holes have no readable number
+- **Ross Golf Course** (w217936677): 6 holes have no readable number; no green: holes 1 unnumbered
+- **Rosslare Golf Club** (r4622486): no green: holes 15
+- **Royal Tara Golf Club** (r4580986): 27 holes have no readable number
+- **Rush Golf Club** (w23778034): 7 holes have no readable number; no green: holes 6 unnumbered
+- **Scarke Golf Course** (r3177442): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]; no green: holes 1, 2, 3, 4, 5, 5, 6, 7, 7, 8, 9, 17
+- **Silloge Park Public Golf Course** (w23388433): 1 holes have no readable number; missing hole numbers: [12]
+- **Skerries Golf Club** (w23511474): 18 holes have no readable number; no green: holes 7 unnumbered
+- **Skibbereen & West Carbery Golf Club** (r5900844): missing hole numbers: [8, 9, 10, 11, 12, 13, 14, 15, 16]
+- **Slieve Russell Golf Club** (w191502808): 27 holes have no readable number
+- **Spa Golf Club** (r4651565): missing hole numbers: [11, 12, 13, 14, 15, 16]; unusual hole count: 17
+- **St Helen's Bay Golf Club** (r3989612): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Stackstown Golf Club** (w582655802): 3 holes have no readable number; repeated hole numbers: [3, 12]; missing hole numbers: [1, 15, 16]
+- **Stepaside Golf Course** (w34724760): 9 holes have no readable number
+- **Strandhill Golf Club** (w223560522): repeated hole numbers: [1]; missing hole numbers: [14]; unusual hole count: 17
+- **Sutton Golf Club** (r18082363): 2 holes have no readable number
+- **Swords Open Golf Course** (w51228052): 12 holes have no readable number; no green: holes 4 unnumbered
+- **Tara Glen Golf and Country Club** (w28727876): 1 holes have no readable number
+- **Tee12** (w1540088205): missing hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]; unusual hole count: 12
+- **Templemore Golf Club** (w195048650): 8 holes have no readable number
+- **The Burrow** (w1161365354): unusual hole count: 12
+- **The Montgomerie** (w657053688): no green: holes 5
+- **The O'Meara** (w1512983606): no green: holes 4
+- **The Old Course - Portstewart Golf Club** (r6598003): missing hole numbers: [2, 3, 4, 5, 6, 7, 8]
+- **Thurles Golf Club** (w272632947): no green: holes 13
+- **Tralee Golf Club** (w351897616): no green: holes 6, 13
+- **Tramore Golf Club** (w44326548): repeated hole numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- **Tubbercurry Golf Course** (w1533709920): missing hole numbers: [1, 2, 4, 6, 7]; unusual hole count: 8
+- **Tulfarris Hotel and Golf Resort** (w71604727): no green: holes 6
+- **Tullamore Golf Club** (w58651232): 1 holes have no readable number; missing hole numbers: [13]
+- **Valley Links** (w1413316754): 2 holes have no readable number; repeated hole numbers: [1]; no green: holes 1, 11, 12, 15, 2 unnumbered
+- **Warrenpoint Golf Club** (w59517707): 2 holes have no readable number
+- **Westmanstown Golf Club** (w33696339): 19 holes have no readable number; no green: holes 1 unnumbered
+- **Westport Golf Club** (w102902586): 2 holes have no readable number; missing hole numbers: [9]; no green: holes 4
+- **Wexford Golf Club** (r3332710): 1 holes have no readable number
+- **Woodbrook Golf Club** (r19781674): no green: holes 2
+- **Woodenbridge Golf Course** (w33376894): 17 holes have no readable number; no green: holes 17 unnumbered
+- **Youghal Golf Course** (r5948491): 9 holes have no readable number
+
+## Skipped
+
+- way/37790967: unnamed outline with no holes
+- way/42300229: unnamed outline with no holes
+- way/43065971: unnamed outline with no holes
+- way/45792197: unnamed outline with no holes
+- way/50795516: unnamed outline with no holes
+- way/58197713: unnamed outline with no holes
+- way/62047303: unnamed outline with no holes
+- way/68332270: unnamed outline with no holes
+- way/73922145: unnamed outline with no holes
+- way/102667961: unnamed outline with no holes
+- way/113994309: unnamed outline with no holes
+- way/116818394: unnamed outline with no holes
+- way/119429819: unnamed outline with no holes
+- way/146273500: unnamed outline with no holes
+- way/149658849: unnamed outline with no holes
+- way/152094748: unnamed outline with no holes
+- way/157934153: unnamed outline with no holes
+- way/171219608: unnamed outline with no holes
+- way/187243476: unnamed outline with no holes
+- way/188515709: unnamed outline with no holes
+- way/194521805: unnamed outline with no holes
+- way/200043439: unnamed outline with no holes
+- way/213510603: unnamed outline with no holes
+- way/222316789: unnamed outline with no holes
+- way/223267809: unnamed outline with no holes
+- way/259425701: unnamed outline with no holes
+- way/264186189: unnamed outline with no holes
+- way/264373141: unnamed outline with no holes
+- way/265842953: unnamed outline with no holes
+- way/273185480: unnamed outline with no holes
+- relation/3631964: unnamed outline with no holes
+- relation/3634384: unnamed outline with no holes
+- way/281398140: unnamed outline with no holes
+- way/282890972: unnamed outline with no holes
+- way/299300996: unnamed outline with no holes
+- way/302965382: unnamed outline with no holes
+- way/305029208: unnamed outline with no holes
+- way/312574999: unnamed outline with no holes
+- way/314870511: unnamed outline with no holes
+- relation/6790730: unnamed outline with no holes
+- way/340073074: unnamed outline with no holes
+- way/353726430: unnamed outline with no holes
+- way/365416007: unnamed outline with no holes
+- way/375566834: unnamed outline with no holes
+- way/408700783: unnamed outline with no holes
+- relation/6303060: unnamed outline with no holes
+- way/429314668: unnamed outline with no holes
+- way/431049606: unnamed outline with no holes
+- way/431450553: unnamed outline with no holes
+- way/453437779: unnamed outline with no holes
+- way/471093546: unnamed outline with no holes
+- relation/5189078: unnamed outline with no holes
+- way/488579409: unnamed outline with no holes
+- way/513583083: unnamed outline with no holes
+- relation/4680409: unnamed outline with no holes
+- way/620919978: unnamed outline with no holes
+- way/667535697: unnamed outline with no holes
+- way/677987629: unnamed outline with no holes
+- way/683164182: unnamed outline with no holes
+- way/688417458: unnamed outline with no holes
+- way/704808327: unnamed outline with no holes
+- way/717201298: unnamed outline with no holes
+- way/796663159: unnamed outline with no holes
+- way/830910350: unnamed outline with no holes
+- way/832323138: unnamed outline with no holes
+- way/835063753: unnamed outline with no holes
+- way/836146494: unnamed outline with no holes
+- way/910011003: unnamed outline with no holes
+- way/949458575: unnamed outline with no holes
+- way/971024898: unnamed outline with no holes
+- way/974445979: unnamed outline with no holes
+- way/1005586471: unnamed outline with no holes
+- way/1019843389: unnamed outline with no holes
+- relation/5601256: unnamed outline with no holes
+- way/1041760653: unnamed outline with no holes
+- way/1105607005: unnamed outline with no holes
+- way/1168195482: unnamed outline with no holes
+- way/1170510240: unnamed outline with no holes
+- way/1188528805: unnamed outline with no holes
+- way/1243925810: unnamed outline with no holes
+- relation/3558644: unnamed outline with no holes
+- way/1303372353: unnamed outline with no holes
+- way/1329365376: unnamed outline with no holes
+- way/1382112874: unnamed outline with no holes
+- way/1415217677: unnamed outline with no holes
+- way/1523082700: unnamed outline with no holes
+- way/1524944931: unnamed outline with no holes
+- way/1533128876: unnamed outline with no holes
+- way/1533710471: unnamed outline with no holes
+- relation/21702252: unnamed outline with no holes
+- way/1572252286: unnamed outline with no holes
