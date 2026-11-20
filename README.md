@@ -23,6 +23,9 @@ A client fetches `regions.json`, picks the region containing the course it
 wants, then fetches only that region's index. Geofabrik's Ireland extract
 includes Northern Ireland, and its Great Britain extract does not.
 
+The fields, units and what to expect from real data are in
+[`docs/schema.md`](docs/schema.md). The JSON Schemas are in [`schema/`](schema).
+
 ## Data licence
 
 The data is © OpenStreetMap contributors and is available under the

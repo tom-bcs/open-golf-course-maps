@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 from collections import Counter
 from html import escape
 from pathlib import Path
@@ -11,6 +12,8 @@ from typing import Any
 from .normalise import ATTRIBUTION, SCHEMA_VERSION, BuildResult
 
 STATUSES = ("ready", "partial", "outline")
+# The JSON Schemas live at the repo root and are published with the data.
+SCHEMA_DIR = Path(__file__).resolve().parents[2] / "schema"
 
 
 def index_entry(course: dict[str, Any]) -> dict[str, Any]:
@@ -163,3 +166,8 @@ Not affiliated with or endorsed by the OpenStreetMap Foundation.</p>
 </body>
 </html>
 """
+
+
+def publish_schemas(out_dir: Path) -> None:
+    """Copies the JSON Schemas to `out_dir/schema/`, where their `$id`s point."""
+    shutil.copytree(SCHEMA_DIR, out_dir / "schema", dirs_exist_ok=True)

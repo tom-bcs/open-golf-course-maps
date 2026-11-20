@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tom-bcs.github.io/open-golf-course-maps/schema/course.schema.json",
+  "title": "Course",
+  "description": "One golf course: courses/<id>.json. Coordinates are [latitude, longitude]. See docs/schema.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "attribution", "id", "name", "club", "status", "issues", "notes",
+    "holeCount", "pars", "parComplete", "centre", "bounds", "holes"
+  ],
+  "properties": {
+    "schema": { "const": 1 },
+    "attribution": { "type": "string", "minLength": 1 },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "name": { "type": ["string", "null"] },
+    "club": { "type": ["string", "null"] },
+    "status": { "enum": ["ready", "partial", "outline"] },
+    "issues": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "array", "items": { "type": "string" } },
+    "holeCount": { "type": "integer", "minimum": 0 },
+    "pars": { "type": "array", "items": { "type": ["integer", "null"] } },
+    "parComplete": { "type": "boolean" },
+    "centre": { "$ref": "#/$defs/latlon" },
+    "bounds": { "$ref": "#/$defs/bounds" },
+    "holes": { "type": "array", "items": { "$ref": "#/$defs/hole" } }
+  },
+  "$defs": {
+    "latlon": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        { "type": "number", "minimum": -90, "maximum": 90 },
+        { "type": "number", "minimum": -180, "maximum": 180 }
+      ]
+    },
+    "bounds": {
+      "description": "[south, west, north, east]",
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "prefixItems": [
+        { "type": "number", "minimum": -90, "maximum": 90 },
+        { "type": "number", "minimum": -180, "maximum": 180 },
+        { "type": "number", "minimum": -90, "maximum": 90 },
+        { "type": "number", "minimum": -180, "maximum": 180 }
+      ]
+    },
+    "ring": {
+      "description": "A polygon's vertices. The closing point is not repeated.",
+      "type": "array",
+      "minItems": 3,
+      "items": { "$ref": "#/$defs/latlon" }
+    },
+    "hole": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["number", "par", "name", "line", "tees", "green", "pin", "hazards"],
+      "properties": {
+        "number": { "type": ["integer", "null"], "minimum": 1, "maximum": 99 },
+        "par": { "type": ["integer", "null"], "minimum": 2, "maximum": 7 },
+        "name": { "type": ["string", "null"] },
+        "line": {
+          "description": "The hole's centre line from the tee to the green.",
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/latlon" }
+        },
+        "tees": { "type": "array", "items": { "$ref": "#/$defs/ring" } },
+        "green": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["polygon", "centre"],
+              "properties": {
+                "polygon": { "$ref": "#/$defs/ring" },
+                "centre": { "$ref": "#/$defs/latlon" }
+              }
+            }
+          ]
+        },
+        "pin": { "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/latlon" }] },
+        "hazards": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "polygon"],
+            "properties": {
+              "kind": { "enum": ["bunker", "water", "lateral_water"] },
+              "polygon": { "$ref": "#/$defs/ring" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

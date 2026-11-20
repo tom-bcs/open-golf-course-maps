@@ -19,7 +19,7 @@ from pathlib import Path
 from .fetch import download, parse_regions
 from .normalise import build_courses
 from .overpass import load_overpass
-from .publish import write_output
+from .publish import publish_schemas, write_output
 
 
 def build(region: str, source: Path, out_dir: Path) -> None:
@@ -65,6 +65,7 @@ def main(argv: list[str]) -> int:
         print(f"{region}: fetching", flush=True)
         source = download(region, args.data_dir, args.refresh)
         build(region, source, args.out_dir)
+    publish_schemas(args.out_dir)
     return 0
 
 
