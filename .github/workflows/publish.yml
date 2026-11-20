@@ -17,6 +17,10 @@ concurrency:
   group: publish
   cancel-in-progress: false
 
+env:
+  # The project is a set of scripts, not an installed package.
+  PYTHONPATH: src
+
 jobs:
   build:
     runs-on: ubuntu-latest
