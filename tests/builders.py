@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from bcs_golf_maps.geo import Projector
-from bcs_golf_maps.model import Feature
+from golf_course_maps.geo import Projector
+from golf_course_maps.model import Feature
 
 ORIGIN = (51.0, -0.27)
 _projector = Projector(ORIGIN)

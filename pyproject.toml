@@ -1,5 +1,5 @@
 [project]
-name = "bcs-golf-maps"
+name = "open-golf-course-maps"
 version = "0.1.0"
 description = "Turns OpenStreetMap golf data for Great Britain and Ireland into one JSON file per course."
 readme = "README.md"

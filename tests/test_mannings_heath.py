@@ -6,9 +6,9 @@ import math
 
 from shapely.geometry import Polygon
 
-from bcs_golf_maps.geo import METRES_PER_YARD, Projector
-from bcs_golf_maps.normalise import ATTRIBUTION, BuildResult
-from bcs_golf_maps.publish import build_index, build_regions, render_report, write_output
+from golf_course_maps.geo import METRES_PER_YARD, Projector
+from golf_course_maps.normalise import ATTRIBUTION, BuildResult
+from golf_course_maps.publish import build_index, build_regions, render_report, write_output
 
 REGION = "europe/great-britain"
 WATERFALL_PARS = [4, 4, 4, 4, 3, 4, 4, 5, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4]

@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pytest
 
-from bcs_golf_maps.normalise import BuildResult, build_courses
-from bcs_golf_maps.overpass import load_overpass
+from golf_course_maps.normalise import BuildResult, build_courses
+from golf_course_maps.overpass import load_overpass
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

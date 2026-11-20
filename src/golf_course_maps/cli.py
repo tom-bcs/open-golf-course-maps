@@ -1,4 +1,4 @@
-"""Usage: python -m bcs_golf_maps.cli REGION SOURCE OUT_DIR
+"""Usage: python -m golf_course_maps.cli REGION SOURCE OUT_DIR
 
 REGION is a Geofabrik path, e.g. europe/great-britain.
 SOURCE is that region's .osm.pbf extract, or an Overpass .json file (used

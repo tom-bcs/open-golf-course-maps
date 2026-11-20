@@ -1,4 +1,4 @@
-# bcs-golf-course-maps
+# open-golf-course-maps
 
 Golf course maps built from OpenStreetMap, starting with Great Britain and
 Ireland.
@@ -48,10 +48,10 @@ uv sync
 uv run pytest
 
 # From the test fixture (Overpass JSON):
-PYTHONPATH=src uv run python -m bcs_golf_maps.cli europe/great-britain tests/fixtures/mannings_heath.overpass.json out
+PYTHONPATH=src uv run python -m golf_course_maps.cli europe/great-britain tests/fixtures/mannings_heath.overpass.json out
 
 # From a Geofabrik extract:
-PYTHONPATH=src uv run python -m bcs_golf_maps.cli europe/ireland-and-northern-ireland data/europe/ireland-and-northern-ireland-latest.osm.pbf out
+PYTHONPATH=src uv run python -m golf_course_maps.cli europe/ireland-and-northern-ireland data/europe/ireland-and-northern-ireland-latest.osm.pbf out
 ```
 
 This project is not affiliated with or endorsed by the OpenStreetMap

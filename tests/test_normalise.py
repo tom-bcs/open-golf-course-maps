@@ -1,4 +1,4 @@
-from bcs_golf_maps.normalise import build_courses
+from golf_course_maps.normalise import build_courses
 
 from .builders import as_relation, bunker, complete_hole, green, hole, outline, pin, square, tee
 
