@@ -1,0 +1,4 @@
+# Geofabrik extracts to build, one per line. A region is its Geofabrik path
+# (https://download.geofabrik.de). Adding a country is adding a line.
+europe/great-britain
+europe/ireland-and-northern-ireland

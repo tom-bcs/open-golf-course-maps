@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 from collections import Counter
+from html import escape
 from pathlib import Path
 from typing import Any
 
@@ -113,6 +114,52 @@ def build_regions(out_dir: Path) -> dict[str, Any]:
 
 
 def write_regions(out_dir: Path) -> None:
-    (out_dir / "regions.json").write_text(
-        json.dumps(build_regions(out_dir), ensure_ascii=False, separators=(",", ":"))
+    regions = build_regions(out_dir)
+    (out_dir / "regions.json").write_text(json.dumps(regions, ensure_ascii=False, separators=(",", ":")))
+    (out_dir / "index.html").write_text(render_site_index(regions))
+    (out_dir / ".nojekyll").write_text("")  # serve the files as they are
+
+
+def render_site_index(regions: dict[str, Any]) -> str:
+    """The landing page, so the site root isn't a 404."""
+    rows = "\n".join(
+        "<tr>"
+        f'<td><a href="{escape(r["index"])}">{escape(r["path"])}</a></td>'
+        f'<td>{r["courseCount"]}</td>'
+        f'<td>{r["statusCounts"]["ready"]}</td>'
+        f'<td>{r["statusCounts"]["partial"]}</td>'
+        f'<td>{r["statusCounts"]["outline"]}</td>'
+        f'<td>{escape(r["dataTimestamp"] or "unknown")}</td>'
+        f'<td><a href="{escape(r["path"])}/report.md">report</a></td>'
+        "</tr>"
+        for r in regions["regions"]
     )
+    return f"""<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open golf course maps</title>
+<style>
+body {{ font: 16px/1.5 system-ui, sans-serif; margin: 2rem auto; max-width: 52rem; padding: 0 1rem; }}
+table {{ border-collapse: collapse; width: 100%; }}
+th, td {{ border-bottom: 1px solid #ccc; padding: .4rem .6rem; text-align: left; }}
+</style>
+</head>
+<body>
+<h1>Open golf course maps</h1>
+<p>Golf course maps built from OpenStreetMap: one JSON file per course, grouped by region.
+Start from <a href="regions.json">regions.json</a>.</p>
+<table>
+<thead><tr><th>Region</th><th>Courses</th><th>Ready</th><th>Partial</th><th>Outline only</th><th>Data from</th><th></th></tr></thead>
+<tbody>
+{rows}
+</tbody>
+</table>
+<p>{escape(ATTRIBUTION)}. The data is available under the
+<a href="https://opendatacommons.org/licenses/odbl/1-0/">Open Database Licence 1.0</a>.
+Source and code (MIT): <a href="https://github.com/tom-bcs/open-golf-course-maps">tom-bcs/open-golf-course-maps</a>.
+Not affiliated with or endorsed by the OpenStreetMap Foundation.</p>
+</body>
+</html>
+"""

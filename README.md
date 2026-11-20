@@ -36,10 +36,20 @@ The code in this repository is MIT licensed. See `LICENCE`.
 
 ## Status
 
-Work in progress. Milestone 1 is done: the normaliser, tested on Mannings
-Heath (a 27-hole club that OpenStreetMap maps as an 18-hole course with no
-course tag and a tagged 9-hole course). It does not yet read the Geofabrik
-extracts, publish to GitHub Pages or run on a schedule.
+Working. A GitHub Actions job rebuilds every region in `regions.txt` each
+Monday from the latest Geofabrik extracts, publishes the result to GitHub
+Pages and commits the quality reports under `reports/`. To add a country, add
+its Geofabrik path to `regions.txt`.
+
+The normaliser groups holes into playable courses and grades each one:
+
+- **ready**: 9 or 18 holes, numbered 1..N, every hole with a green;
+- **partial**: some holes are missing a green or a number, or the count is odd;
+- **outline**: the course boundary is mapped, with no holes.
+
+Each region's `report.md` says how many courses fall in each grade and why
+the partial ones fail. Most of what stops a course being ready is missing
+data in OpenStreetMap, not something this code can fix.
 
 ## Development
 
@@ -47,11 +57,11 @@ extracts, publish to GitHub Pages or run on a schedule.
 uv sync
 uv run pytest
 
-# From the test fixture (Overpass JSON):
-PYTHONPATH=src uv run python -m golf_course_maps.cli europe/great-britain tests/fixtures/mannings_heath.overpass.json out
+# Build one region from the test fixture (Overpass JSON):
+PYTHONPATH=src uv run python -m golf_course_maps.cli build europe/great-britain tests/fixtures/mannings_heath.overpass.json out
 
-# From a Geofabrik extract:
-PYTHONPATH=src uv run python -m golf_course_maps.cli europe/ireland-and-northern-ireland data/europe/ireland-and-northern-ireland-latest.osm.pbf out
+# Download and build everything in regions.txt (about 2.5 GB the first time):
+PYTHONPATH=src uv run python -m golf_course_maps.cli build-all regions.txt data out
 ```
 
 This project is not affiliated with or endorsed by the OpenStreetMap
