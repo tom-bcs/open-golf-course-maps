@@ -31,6 +31,8 @@ def main(argv: list[str]) -> int:
     result = build_courses(loaded.features)
     region_dir = write_output(result, out_dir, region, timestamp)
     print(f"{len(result.courses)} courses written to {region_dir}")
+    if loaded.relations_read:
+        print(f"{loaded.relations_read} multipolygon relations read")
     if loaded.skipped_relations:
         print(f"{loaded.skipped_relations} relations ignored")
     return 0

@@ -12,10 +12,12 @@ from .model import Feature
 @dataclass(frozen=True)
 class Loaded:
     features: list[Feature]
-    # Relations (multipolygon outlines and hazards) aren't read yet. Counted
-    # so a run says how much it ignored instead of ignoring it silently.
+    # Overpass relations aren't read (the fixtures have none). Counted so a run
+    # says how much it ignored instead of ignoring it silently.
     skipped_relations: int
     data_timestamp: str | None = None
+    # Multipolygon relations read as outer rings, from an extract.
+    relations_read: int = 0
 
 
 def load_overpass(path: Path) -> Loaded:

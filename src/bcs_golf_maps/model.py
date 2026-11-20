@@ -10,21 +10,23 @@ LatLon = tuple[float, float]
 
 @dataclass(frozen=True)
 class Feature:
-    """A node or way with its tags and coordinates.
+    """A node, way or multipolygon ring with its tags and coordinates.
 
     Both readers (Overpass JSON for the test fixtures, the Geofabrik extract
     for the real run) produce these, so the normaliser never knows where the
     data came from.
     """
 
-    osm_type: str  # "node" or "way"
+    osm_type: str  # "node", "way" or "relation" (one outer ring of a multipolygon)
     osm_id: int
     tags: dict[str, str]
     coords: tuple[LatLon, ...]
+    # Which outer ring, for a multipolygon relation with more than one.
+    part: int = 0
 
     @property
     def ref(self) -> str:
-        return f"{self.osm_type}/{self.osm_id}"
+        return f"{self.osm_type}/{self.osm_id}" + (f"#{self.part}" if self.part else "")
 
     @property
     def golf(self) -> str | None:

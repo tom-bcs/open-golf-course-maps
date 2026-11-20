@@ -1,6 +1,6 @@
 from bcs_golf_maps.normalise import build_courses
 
-from .builders import bunker, complete_hole, green, hole, outline, pin, square, tee
+from .builders import as_relation, bunker, complete_hole, green, hole, outline, pin, square, tee
 
 
 def _course(features: list, index: int = 0) -> dict:
@@ -276,3 +276,74 @@ def test_an_outline_is_left_whole_when_splitting_would_not_remove_the_repeats() 
     assert len(courses) == 1
     assert courses[0]["status"] == "partial"
     assert any("repeated hole numbers" in i for i in courses[0]["issues"])
+
+
+# MARK: - Multipolygon relations
+
+
+def test_a_relation_outline_names_and_groups_its_holes() -> None:
+    features = [as_relation(outline(500, 150, 1_500, "Relation Club"), 777)]
+    for number in range(1, 10):
+        features += complete_hole(str(number), east=number * 100)
+    course = _course(features)
+    assert course["club"] == "Relation Club"
+    assert course["id"] == "r777"
+    assert course["status"] == "ready"
+
+
+def test_a_club_split_into_two_rings_keeps_its_holes_together() -> None:
+    # One relation, two outer rings (a road between): holes 1-5 in one, 6-9 in the other.
+    features = [
+        as_relation(outline(250, 150, 400, "Split Club"), 888, part=0),
+        as_relation(outline(250, 3_150, 400, "Split Club"), 888, part=1),
+    ]
+    for number in range(1, 6):
+        features += complete_hole(str(number), east=number * 80)
+    for number in range(6, 10):
+        features += complete_hole(str(number), east=(number - 5) * 80, north=3_000)
+    courses = build_courses(features).courses
+    assert [(c["id"], c["club"], c["holeCount"], c["status"]) for c in courses] == [
+        ("r888", "Split Club", 9, "ready")
+    ]
+
+
+def test_a_ring_with_no_holes_is_not_listed_as_a_course_of_its_own() -> None:
+    features = [
+        as_relation(outline(500, 150, 700, "Split Club"), 888, part=0),
+        as_relation(outline(500, 6_150, 700, "Split Club"), 888, part=1),
+    ]
+    for number in range(1, 10):
+        features += complete_hole(str(number), east=number * 100, north=6_000)
+    courses = build_courses(features).courses
+    assert [(c["id"], c["holeCount"]) for c in courses] == [("r888", 9)]
+
+
+def test_a_relation_outline_with_no_holes_is_outline_only() -> None:
+    result = build_courses([as_relation(outline(0, 0, 500, "Pitch And Putt"), 999)])
+    assert [(c["id"], c["status"]) for c in result.courses] == [("r999", "outline")]
+
+
+def test_a_relation_water_hazard_is_claimed_by_the_nearest_hole() -> None:
+    lake = as_relation(square(10, 150, 8, {"golf": "water_hazard"}), 555)
+    features = complete_hole("1", east=0) + [lake]
+    hazards = _course(features)["holes"][0]["hazards"]
+    assert [h["kind"] for h in hazards] == ["water"]
+
+
+def test_a_hole_that_starts_just_outside_the_outline_still_joins_it() -> None:
+    # The outline's southern edge is at north -250. Hole 5 starts 50 m south of
+    # it and runs into the course; the other eight sit wholly inside.
+    features = [outline(500, 150, 400, "Loose Outline Club")]
+    for number in (1, 2, 3, 4, 6, 7, 8, 9):
+        features += complete_hole(str(number), east=number * 80)
+    features += [hole((400, -300), (400, 0), "5", par="4"), tee(400, -300), green(400, 0)]
+    courses = build_courses(features).courses
+    assert [(c["club"], c["holeCount"], c["status"]) for c in courses] == [("Loose Outline Club", 9, "ready")]
+
+
+def test_a_hole_far_from_every_outline_is_not_pulled_in() -> None:
+    features = [outline(0, 0, 200, "Small Club")]
+    features += complete_hole("1", east=0, north=0)
+    features += complete_hole("1", east=0, north=3_000)
+    clubs = sorted((c["club"] or "") for c in build_courses(features).courses)
+    assert clubs == ["", "Small Club"]

@@ -31,6 +31,8 @@ from typing import Any
 
 from shapely import STRtree
 from shapely.geometry import LineString, Point, Polygon, box
+from shapely.geometry.base import BaseGeometry
+from shapely.ops import unary_union
 
 from .geo import Projector
 from .model import Feature, LatLon
@@ -47,6 +49,10 @@ PIN_MAX_METRES = 5
 # Britain and Ireland, comfortably past the 40 m limits above.
 SEARCH_PAD_DEGREES = 0.001
 COORD_DECIMALS = 7
+# A hole whose first point is outside every outline still joins the outline its
+# line overlaps most, within this of the edge (about 55 m): outlines are drawn
+# loosely, and a club's holes must not be split by one that strays over the edge.
+OUTLINE_REACH_DEGREES = 0.0005
 # Holes whose lines come within this of each other (in degrees, roughly
 # 220 m north-south and 140 m east-west) count as the same course.
 CLUSTER_GAP_DEGREES = 0.002
@@ -97,7 +103,7 @@ class _Layers:
 
 def _build_layers(features: list[Feature]) -> _Layers:
     def closed(kind: str) -> list[Feature]:
-        return [f for f in features if f.osm_type == "way" and f.golf == kind and f.is_closed]
+        return [f for f in features if f.osm_type != "node" and f.golf == kind and f.is_closed]
 
     return _Layers(
         greens=_Layer(closed("green")),
@@ -180,8 +186,48 @@ def _nearest_claims(
 
 
 @dataclass
+class _Outline:
+    """One outline: a closed way, or every outer ring of one multipolygon.
+
+    A club split by a road is one relation with two rings, and its holes lie
+    in both, so the rings must be treated as one outline.
+    """
+
+    rings: list[Feature]
+    polygon: BaseGeometry
+
+    @property
+    def key(self) -> tuple[str, int]:
+        return self.rings[0].osm_type, self.rings[0].osm_id
+
+    @property
+    def id(self) -> str:
+        return f"{self.rings[0].osm_type[0]}{self.rings[0].osm_id}"
+
+    @property
+    def name(self) -> str | None:
+        return self.rings[0].tags.get("name")
+
+
+def _build_outlines(features: list[Feature]) -> list[_Outline]:
+    rings_by_key: dict[tuple[str, int], list[Feature]] = defaultdict(list)
+    for feature in features:
+        if feature.osm_type != "node" and feature.tags.get("leisure") == "golf_course" and feature.is_closed:
+            rings_by_key[(feature.osm_type, feature.osm_id)].append(feature)
+    outlines = []
+    for rings in rings_by_key.values():
+        rings.sort(key=lambda ring: ring.part)
+        polygons = []
+        for ring in rings:
+            polygon = Polygon([(lon, lat) for lat, lon in ring.coords])
+            polygons.append(polygon if polygon.is_valid else polygon.buffer(0))
+        outlines.append(_Outline(rings, unary_union(polygons)))
+    return outlines
+
+
+@dataclass
 class _Group:
-    outline: Feature | None
+    outline: _Outline | None
     course_tag: str | None
     holes: list[Feature]
     # Set when proximity split one outline's holes into several courses, so
@@ -219,31 +265,42 @@ def _cluster(holes: list[Feature]) -> list[list[Feature]]:
     return list(clusters.values())
 
 
-def _group_holes(holes: list[Feature], outlines: list[Feature]) -> tuple[list[_Group], set[str]]:
+def _outline_for(hole: Feature, polygons: list, tree: STRtree) -> tuple[int | None, list[int]]:
+    """The outline a hole belongs to, and every outline that holds its start."""
+    lat, lon = hole.coords[0]
+    hits = [int(i) for i in tree.query(Point(lon, lat), predicate="within")]
+    if hits:
+        return min(hits, key=lambda i: polygons[i].area), hits
+    line = LineString([(lon, lat) for lat, lon in hole.coords])
+    near = [int(i) for i in tree.query(line.buffer(OUTLINE_REACH_DEGREES), predicate="intersects")]
+    if not near:
+        return None, []
+    reach = line.buffer(OUTLINE_REACH_DEGREES)
+    best = max(near, key=lambda i: (polygons[i].intersection(reach).area, -polygons[i].area))
+    return best, [best]
+
+
+def _group_holes(holes: list[Feature], outlines: list[_Outline]) -> tuple[list[_Group], set[tuple[str, int]]]:
     """Returns the groups, and every outline that contains at least one hole.
 
     The second is wider than the groups' own outlines: an estate outline
     around a course outline holds holes without being any hole's smallest
     outline, and mustn't then be listed as a course of its own.
     """
-    polygons = []
-    for outline in outlines:
-        polygon = Polygon([(lon, lat) for lat, lon in outline.coords])
-        polygons.append(polygon if polygon.is_valid else polygon.buffer(0))
+    polygons = [outline.polygon for outline in outlines]
     tree = STRtree(polygons) if polygons else None
 
-    keyed: dict[tuple[str | None, str | None], _Group] = {}
-    containing: set[str] = set()
+    keyed: dict[tuple[tuple[str, int] | None, str | None], _Group] = {}
+    containing: set[tuple[str, int]] = set()
     for hole in holes:
         outline = None
         if tree is not None:
-            lat, lon = hole.coords[0]
-            hits = tree.query(Point(lon, lat), predicate="within")
-            if len(hits):
-                outline = outlines[min(hits, key=lambda i: polygons[i].area)]
-                containing.update(outlines[i].ref for i in hits)
+            outline_index, hits = _outline_for(hole, polygons, tree)
+            if outline_index is not None:
+                outline = outlines[outline_index]
+                containing.update(outlines[i].key for i in hits)
         tag = hole.tags.get("golf:course:name")
-        key = (outline.ref if outline else None, tag)
+        key = (outline.key if outline else None, tag)
         keyed.setdefault(key, _Group(outline, tag, [])).holes.append(hole)
 
     groups: list[_Group] = []
@@ -370,7 +427,7 @@ def _course_record(group: _Group, holes: list[dict[str, Any]]) -> dict[str, Any]
             points += [tuple(p) for p in hole["green"]["polygon"]]
     bounds = _bounds(points)  # type: ignore[arg-type]
 
-    course_id = f"w{outline.osm_id}" if outline else f"h{min(h.osm_id for h in group.holes)}"
+    course_id = outline.id if outline else f"h{min(h.osm_id for h in group.holes)}"
     if tag:
         course_id += f"-{_slug(tag)}"
     if group.split:
@@ -380,8 +437,8 @@ def _course_record(group: _Group, holes: list[dict[str, Any]]) -> dict[str, Any]
         "schema": SCHEMA_VERSION,
         "attribution": ATTRIBUTION,
         "id": course_id,
-        "name": tag or (outline.tags.get("name") if outline else None),
-        "club": outline.tags.get("name") if outline else None,
+        "name": tag or (outline.name if outline else None),
+        "club": outline.name if outline else None,
         "status": "partial" if issues else "ready",
         "issues": issues,
         "notes": notes,
@@ -394,14 +451,14 @@ def _course_record(group: _Group, holes: list[dict[str, Any]]) -> dict[str, Any]
     }
 
 
-def _outline_record(outline: Feature) -> dict[str, Any]:
-    bounds = _bounds(list(outline.coords))
+def _outline_record(outline: _Outline) -> dict[str, Any]:
+    bounds = _bounds([point for ring in outline.rings for point in ring.coords])
     return {
         "schema": SCHEMA_VERSION,
         "attribution": ATTRIBUTION,
-        "id": f"w{outline.osm_id}",
-        "name": outline.tags.get("name"),
-        "club": outline.tags.get("name"),
+        "id": outline.id,
+        "name": outline.name,
+        "club": outline.name,
         "status": "outline",
         "issues": ["no holes mapped"],
         "notes": [],
@@ -418,10 +475,7 @@ def _outline_record(outline: Feature) -> dict[str, Any]:
 
 
 def build_courses(features: list[Feature]) -> BuildResult:
-    outlines = [
-        f for f in features
-        if f.osm_type == "way" and f.tags.get("leisure") == "golf_course" and f.is_closed
-    ]
+    outlines = _build_outlines(features)
     holes = [f for f in features if f.osm_type == "way" and f.golf == "hole" and len(f.coords) >= 2]
 
     layers = _build_layers(features)
@@ -447,12 +501,12 @@ def build_courses(features: list[Feature]) -> BuildResult:
 
     skipped: list[str] = []
     for outline in outlines:
-        if outline.ref in outlines_with_holes:
+        if outline.key in outlines_with_holes:
             continue
-        if outline.tags.get("name"):
+        if outline.name:
             courses.append(_outline_record(outline))
         else:
-            skipped.append(f"{outline.ref}: unnamed outline with no holes")
+            skipped.append(f"{outline.rings[0].ref}: unnamed outline with no holes")
 
     courses.sort(key=lambda c: (c["name"] or "", c["id"]))
     return BuildResult(courses, skipped)

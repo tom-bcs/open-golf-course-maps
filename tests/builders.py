@@ -66,3 +66,8 @@ def complete_hole(ref: str, east: float, north: float = 0, par: str | None = "4"
         tee(east, north),
         green(east, north + 300),
     ]
+
+
+def as_relation(feature: Feature, relation_id: int, part: int = 0) -> Feature:
+    """The same ring, as one outer ring of a multipolygon relation."""
+    return Feature("relation", relation_id, feature.tags, feature.coords, part)
