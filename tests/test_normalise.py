@@ -79,13 +79,19 @@ def test_a_missing_par_is_a_note_and_not_a_failure() -> None:
     assert "no par: holes 1, 2, 3, 4, 5, 6, 7, 8, 9" in course["notes"]
 
 
-def test_an_unusual_hole_count_is_a_note() -> None:
-    features = []
+def test_an_unusual_hole_count_is_not_ready() -> None:
+    features = [outline(300, 150, 1_000, "Test Club")]
     for number in range(1, 7):
         features += complete_hole(str(number), east=number * 100)
     course = _course(features)
-    assert course["status"] == "ready"
-    assert "unusual hole count: 6" in course["notes"]
+    assert course["status"] == "partial"
+    assert course["issues"] == ["unusual hole count: 6"]
+
+
+def test_a_lone_hole_is_not_a_ready_course() -> None:
+    course = _course(complete_hole("1", east=0))
+    assert course["status"] == "partial"
+    assert course["issues"] == ["unusual hole count: 1"]
 
 
 def test_an_unnumbered_unclosed_green_is_ignored() -> None:

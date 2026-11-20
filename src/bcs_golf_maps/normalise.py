@@ -12,7 +12,8 @@ The rules, in the order they apply:
    hazards nearest its line. Tees, hazards and pins belong to one hole only,
    the nearest. A green can be shared by two holes.
 4. A course is `ready` when every hole has a green and the hole numbers run
-   1..N with no gaps or repeats. Anything less is `partial`. An outline with
+   1..N with no gaps or repeats, with N of 9 or 18 (a lone hole or a handful
+   is a stray fragment, not a course). Anything less is `partial`. An outline with
    no holes is `outline`. A missing tee polygon is only a note: the first
    point of the hole line is the tee, and a fifth of real holes have no tee
    mapped, which would fail almost every course.
@@ -350,7 +351,7 @@ def _check_course(holes: list[dict[str, Any]]) -> tuple[list[str], list[str]]:
         if missing:
             issues.append(f"missing hole numbers: {missing}")
         if max(numbers) not in (9, 18):
-            notes.append(f"unusual hole count: {max(numbers)}")
+            issues.append(f"unusual hole count: {max(numbers)}")
     for key, label, bucket in (("green", "no green", issues), ("tees", "no tee", notes), ("par", "no par", notes)):
         listed = _hole_numbers(holes, key)
         if listed:
