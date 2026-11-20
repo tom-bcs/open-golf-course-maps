@@ -11,9 +11,14 @@ The rules, in the order they apply:
    nearest, its last point), the tee boxes nearest its first point, and the
    hazards nearest its line. Tees, hazards and pins belong to one hole only,
    the nearest. A green can be shared by two holes.
-4. A course is `ready` when every hole has a tee and a green and the hole
-   numbers run 1..N with no gaps or repeats. Anything less is `partial`.
-   An outline with no holes is `outline`.
+4. A course is `ready` when every hole has a green and the hole numbers run
+   1..N with no gaps or repeats. Anything less is `partial`. An outline with
+   no holes is `outline`. A missing tee polygon is only a note: the first
+   point of the hole line is the tee, and a fifth of real holes have no tee
+   mapped, which would fail almost every course.
+5. Holes in no outline are grouped by proximity. So is a group with repeated
+   hole numbers, when splitting it removes every repeat (a 27-hole club in
+   one outline, with no course tag).
 """
 
 from __future__ import annotations
@@ -24,7 +29,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from shapely import STRtree
-from shapely.geometry import Point, Polygon, box
+from shapely.geometry import LineString, Point, Polygon, box
 
 from .geo import Projector
 from .model import Feature, LatLon
@@ -41,6 +46,9 @@ PIN_MAX_METRES = 5
 # Britain and Ireland, comfortably past the 40 m limits above.
 SEARCH_PAD_DEGREES = 0.001
 COORD_DECIMALS = 7
+# Holes whose lines come within this of each other (in degrees, roughly
+# 220 m north-south and 140 m east-west) count as the same course.
+CLUSTER_GAP_DEGREES = 0.002
 
 HAZARD_KINDS = {
     "bunker": "bunker",
@@ -175,6 +183,39 @@ class _Group:
     outline: Feature | None
     course_tag: str | None
     holes: list[Feature]
+    # Set when proximity split one outline's holes into several courses, so
+    # their ids can't collide.
+    split: bool = False
+
+
+def _number(hole: Feature) -> int | None:
+    return _int_tag(hole, "ref", 1, 99)
+
+
+def _has_repeats(holes: list[Feature]) -> bool:
+    numbers = [n for n in map(_number, holes) if n is not None]
+    return len(numbers) != len(set(numbers))
+
+
+def _cluster(holes: list[Feature]) -> list[list[Feature]]:
+    """Joins holes whose lines pass within CLUSTER_GAP_DEGREES of each other."""
+    lines = [LineString([(lon, lat) for lat, lon in h.coords]) for h in holes]
+    tree = STRtree(lines)
+    parent = list(range(len(holes)))
+
+    def find(i: int) -> int:
+        while parent[i] != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+
+    for i, line in enumerate(lines):
+        for j in tree.query(line.buffer(CLUSTER_GAP_DEGREES), predicate="intersects"):
+            parent[find(int(j))] = find(i)
+    clusters: dict[int, list[Feature]] = defaultdict(list)
+    for i, hole in enumerate(holes):
+        clusters[find(i)].append(hole)
+    return list(clusters.values())
 
 
 def _group_holes(holes: list[Feature], outlines: list[Feature]) -> tuple[list[_Group], set[str]]:
@@ -190,7 +231,7 @@ def _group_holes(holes: list[Feature], outlines: list[Feature]) -> tuple[list[_G
         polygons.append(polygon if polygon.is_valid else polygon.buffer(0))
     tree = STRtree(polygons) if polygons else None
 
-    groups: dict[tuple[str | None, str | None], _Group] = {}
+    keyed: dict[tuple[str | None, str | None], _Group] = {}
     containing: set[str] = set()
     for hole in holes:
         outline = None
@@ -202,8 +243,20 @@ def _group_holes(holes: list[Feature], outlines: list[Feature]) -> tuple[list[_G
                 containing.update(outlines[i].ref for i in hits)
         tag = hole.tags.get("golf:course:name")
         key = (outline.ref if outline else None, tag)
-        groups.setdefault(key, _Group(outline, tag, [])).holes.append(hole)
-    return list(groups.values()), containing
+        keyed.setdefault(key, _Group(outline, tag, [])).holes.append(hole)
+
+    groups: list[_Group] = []
+    for group in keyed.values():
+        if group.outline is None:
+            groups += [_Group(None, group.course_tag, cluster) for cluster in _cluster(group.holes)]
+            continue
+        if _has_repeats(group.holes):
+            clusters = _cluster(group.holes)
+            if len(clusters) > 1 and not any(_has_repeats(c) for c in clusters):
+                groups += [_Group(group.outline, group.course_tag, c, split=True) for c in clusters]
+                continue
+        groups.append(group)
+    return groups, containing
 
 
 # MARK: - Output
@@ -272,13 +325,23 @@ def _hole_record(
     }
 
 
+def _hole_numbers(holes: list[dict[str, Any]], missing: str) -> str:
+    """'3, 7' for the holes whose `missing` key is empty, plus unnumbered ones."""
+    numbers = [h["number"] for h in holes if not h[missing] and h["number"] is not None]
+    unnumbered = sum(1 for h in holes if not h[missing] and h["number"] is None)
+    parts = [str(n) for n in sorted(numbers)]
+    if unnumbered:
+        parts.append(f"{unnumbered} unnumbered")
+    return ", ".join(parts)
+
+
 def _check_course(holes: list[dict[str, Any]]) -> tuple[list[str], list[str]]:
     """Returns (issues that stop a course being ready, notes that don't)."""
     issues: list[str] = []
     notes: list[str] = []
     numbers = [h["number"] for h in holes if h["number"] is not None]
     if len(numbers) != len(holes):
-        issues.append("a hole has no readable number")
+        issues.append(f"{len(holes) - len(numbers)} holes have no readable number")
     repeats = sorted({n for n in numbers if numbers.count(n) > 1})
     if repeats:
         issues.append(f"repeated hole numbers: {repeats}")
@@ -288,14 +351,10 @@ def _check_course(holes: list[dict[str, Any]]) -> tuple[list[str], list[str]]:
             issues.append(f"missing hole numbers: {missing}")
         if max(numbers) not in (9, 18):
             notes.append(f"unusual hole count: {max(numbers)}")
-    for hole in holes:
-        label = f"hole {hole['number']}" if hole["number"] is not None else "unnumbered hole"
-        if not hole["tees"]:
-            issues.append(f"{label}: no tee")
-        if hole["green"] is None:
-            issues.append(f"{label}: no green")
-        if hole["par"] is None:
-            notes.append(f"{label}: no par")
+    for key, label, bucket in (("green", "no green", issues), ("tees", "no tee", notes), ("par", "no par", notes)):
+        listed = _hole_numbers(holes, key)
+        if listed:
+            bucket.append(f"{label}: holes {listed}")
     return issues, notes
 
 
@@ -313,6 +372,8 @@ def _course_record(group: _Group, holes: list[dict[str, Any]]) -> dict[str, Any]
     course_id = f"w{outline.osm_id}" if outline else f"h{min(h.osm_id for h in group.holes)}"
     if tag:
         course_id += f"-{_slug(tag)}"
+    if group.split:
+        course_id += f"-h{min(h.osm_id for h in group.holes)}"
 
     return {
         "schema": SCHEMA_VERSION,

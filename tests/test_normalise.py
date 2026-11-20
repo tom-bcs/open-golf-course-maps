@@ -8,7 +8,8 @@ def _course(features: list, index: int = 0) -> dict:
 
 
 def _eighteen(skip: set[int] = frozenset()) -> list:
-    features = []
+    """An 18-hole course inside an outline, so proximity grouping doesn't apply."""
+    features = [outline(900, 150, 3_000, "Test Club")]
     for number in range(1, 19):
         if number not in skip:
             features += complete_hole(str(number), east=number * 100)
@@ -31,15 +32,16 @@ def test_a_hole_with_no_green_makes_the_course_partial() -> None:
     features.append(tee(700, 0))
     course = _course(features)
     assert course["status"] == "partial"
-    assert course["issues"] == ["hole 7: no green"]
+    assert course["issues"] == ["no green: holes 7"]
 
 
-def test_a_hole_with_no_tee_makes_the_course_partial() -> None:
+def test_a_hole_with_no_tee_is_still_ready_because_the_line_starts_at_the_tee() -> None:
     features = _eighteen(skip={3})
     features += [hole((300, 0), (300, 300), "3"), green(300, 300)]
     course = _course(features)
-    assert course["status"] == "partial"
-    assert course["issues"] == ["hole 3: no tee"]
+    assert course["status"] == "ready"
+    assert course["issues"] == []
+    assert "no tee: holes 3" in course["notes"]
 
 
 def test_a_gap_in_the_numbers_makes_the_course_partial() -> None:
@@ -49,7 +51,7 @@ def test_a_gap_in_the_numbers_makes_the_course_partial() -> None:
 
 
 def test_repeated_numbers_make_the_course_partial() -> None:
-    features = _eighteen() + complete_hole("4", east=2_000)
+    features = _eighteen() + complete_hole("4", east=450)
     course = _course(features)
     assert course["status"] == "partial"
     assert "repeated hole numbers: [4]" in course["issues"]
@@ -63,7 +65,8 @@ def test_a_hole_with_no_number_makes_the_course_partial() -> None:
     ]
     course = _course(features)
     assert course["status"] == "partial"
-    assert "a hole has no readable number" in course["issues"]
+    assert "1 holes have no readable number" in course["issues"]
+    assert "no green: holes" not in " ".join(course["issues"])
 
 
 def test_a_missing_par_is_a_note_and_not_a_failure() -> None:
@@ -73,7 +76,7 @@ def test_a_missing_par_is_a_note_and_not_a_failure() -> None:
     course = _course(features)
     assert course["status"] == "ready"
     assert course["parComplete"] is False
-    assert "hole 1: no par" in course["notes"]
+    assert "no par: holes 1, 2, 3, 4, 5, 6, 7, 8, 9" in course["notes"]
 
 
 def test_an_unusual_hole_count_is_a_note() -> None:
@@ -92,7 +95,7 @@ def test_an_unnumbered_unclosed_green_is_ignored() -> None:
         tee(200, 0),
         square(200, 300, 12, {"golf": "green"}, closed=False),
     ]
-    assert _course(features)["issues"] == ["hole 2: no green"]
+    assert _course(features)["issues"] == ["no green: holes 2"]
 
 
 # MARK: - Matching
@@ -224,3 +227,46 @@ def test_an_outline_that_holds_holes_is_not_also_listed_as_outline_only() -> Non
 def test_no_features_gives_no_courses() -> None:
     result = build_courses([])
     assert result.courses == [] and result.skipped == []
+
+
+# MARK: - Proximity grouping
+
+
+def _loop(first: int, count: int, east: float, north: float, **tags: str) -> list:
+    """`count` numbered holes side by side, 100 m apart, starting at `east`."""
+    features = []
+    for i in range(count):
+        features += complete_hole(str(first + i), east=east + i * 100, north=north, **tags)
+    return features
+
+
+def test_holes_in_no_outline_far_apart_become_separate_courses() -> None:
+    features = _loop(1, 9, east=0, north=0) + _loop(1, 9, east=0, north=5_000)
+    courses = build_courses(features).courses
+    assert len(courses) == 2
+    assert all(c["holeCount"] == 9 and c["status"] == "ready" for c in courses)
+    assert len({c["id"] for c in courses}) == 2
+
+
+def test_holes_in_no_outline_close_together_stay_one_course() -> None:
+    courses = build_courses(_loop(1, 18, east=0, north=0)).courses
+    assert [c["holeCount"] for c in courses] == [18]
+
+
+def test_a_27_hole_outline_is_split_when_that_removes_the_repeats() -> None:
+    features = [outline(1_000, 2_500, 6_000, "Big Club")]
+    features += _loop(1, 9, east=0, north=0) + _loop(1, 9, east=0, north=3_000)
+    courses = build_courses(features).courses
+    assert len(courses) == 2
+    assert all(c["club"] == "Big Club" and c["status"] == "ready" for c in courses)
+    assert len({c["id"] for c in courses}) == 2
+
+
+def test_an_outline_is_left_whole_when_splitting_would_not_remove_the_repeats() -> None:
+    features = [outline(1_000, 2_500, 6_000, "Big Club")]
+    features += _loop(1, 9, east=0, north=0) + _loop(1, 9, east=0, north=3_000)
+    features += complete_hole("2", east=0, north=0)  # a second hole 2 inside the first loop
+    courses = build_courses(features).courses
+    assert len(courses) == 1
+    assert courses[0]["status"] == "partial"
+    assert any("repeated hole numbers" in i for i in courses[0]["issues"])

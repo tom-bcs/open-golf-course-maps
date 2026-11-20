@@ -26,20 +26,21 @@ def index_entry(course: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def build_index(result: BuildResult, data_timestamp: str | None) -> dict[str, Any]:
+def build_index(result: BuildResult, region: str, data_timestamp: str | None) -> dict[str, Any]:
     return {
         "schema": SCHEMA_VERSION,
         "attribution": ATTRIBUTION,
+        "region": region,
         "dataTimestamp": data_timestamp,
         "courseCount": len(result.courses),
         "courses": [index_entry(c) for c in result.courses],
     }
 
 
-def render_report(result: BuildResult, data_timestamp: str | None) -> str:
+def render_report(result: BuildResult, region: str, data_timestamp: str | None) -> str:
     counts = Counter(c["status"] for c in result.courses)
     lines = [
-        "# Quality report",
+        f"# Quality report: {region}",
         "",
         f"Source data: {data_timestamp or 'unknown'}. {ATTRIBUTION}.",
         "",
@@ -59,14 +60,59 @@ def render_report(result: BuildResult, data_timestamp: str | None) -> str:
     return "\n".join(lines)
 
 
-def write_output(result: BuildResult, out_dir: Path, data_timestamp: str | None = None) -> None:
-    courses_dir = out_dir / "courses"
+def write_output(
+    result: BuildResult, out_dir: Path, region: str, data_timestamp: str | None = None
+) -> Path:
+    """Writes one region under `out_dir/<region>/` and returns that folder.
+
+    The region is the Geofabrik path (`europe/great-britain`), so the folders
+    group by continent without a table of our own to maintain.
+    """
+    region_dir = out_dir / region
+    courses_dir = region_dir / "courses"
     courses_dir.mkdir(parents=True, exist_ok=True)
     for course in result.courses:
         (courses_dir / f"{course['id']}.json").write_text(
             json.dumps(course, ensure_ascii=False, separators=(",", ":"))
         )
-    (out_dir / "index.json").write_text(
-        json.dumps(build_index(result, data_timestamp), ensure_ascii=False, separators=(",", ":"))
+    (region_dir / "index.json").write_text(
+        json.dumps(build_index(result, region, data_timestamp), ensure_ascii=False, separators=(",", ":"))
     )
-    (out_dir / "report.md").write_text(render_report(result, data_timestamp))
+    (region_dir / "report.md").write_text(render_report(result, region, data_timestamp))
+    write_regions(out_dir)
+    return region_dir
+
+
+def build_regions(out_dir: Path) -> dict[str, Any]:
+    """Summarises every region index found under `out_dir`.
+
+    Read from disk, not from the current run, so building one region never
+    drops the others from the list.
+    """
+    regions = []
+    for path in sorted(out_dir.glob("**/index.json")):
+        index = json.loads(path.read_text())
+        courses = index["courses"]
+        bounds = None
+        if courses:
+            bounds = [
+                min(c["bounds"][0] for c in courses),
+                min(c["bounds"][1] for c in courses),
+                max(c["bounds"][2] for c in courses),
+                max(c["bounds"][3] for c in courses),
+            ]
+        regions.append({
+            "path": index["region"],
+            "index": f"{index['region']}/index.json",
+            "courseCount": index["courseCount"],
+            "statusCounts": {s: sum(1 for c in courses if c["status"] == s) for s in STATUSES},
+            "bounds": bounds,
+            "dataTimestamp": index["dataTimestamp"],
+        })
+    return {"schema": SCHEMA_VERSION, "attribution": ATTRIBUTION, "regions": regions}
+
+
+def write_regions(out_dir: Path) -> None:
+    (out_dir / "regions.json").write_text(
+        json.dumps(build_regions(out_dir), ensure_ascii=False, separators=(",", ":"))
+    )

@@ -15,10 +15,12 @@ class Loaded:
     # Relations (multipolygon outlines and hazards) aren't read yet. Counted
     # so a run says how much it ignored instead of ignoring it silently.
     skipped_relations: int
+    data_timestamp: str | None = None
 
 
 def load_overpass(path: Path) -> Loaded:
-    elements = json.loads(Path(path).read_text())["elements"]
+    document = json.loads(Path(path).read_text())
+    elements = document["elements"]
     features: list[Feature] = []
     skipped = 0
     for element in elements:
@@ -32,4 +34,4 @@ def load_overpass(path: Path) -> Loaded:
             skipped += 1
             continue
         features.append(Feature(kind, element["id"], tags, coords))
-    return Loaded(features, skipped)
+    return Loaded(features, skipped, document.get("osm3s", {}).get("timestamp_osm_base"))

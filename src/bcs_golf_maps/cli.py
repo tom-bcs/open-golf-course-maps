@@ -1,4 +1,9 @@
-"""Usage: python -m bcs_golf_maps.cli OVERPASS_JSON OUT_DIR"""
+"""Usage: python -m bcs_golf_maps.cli REGION SOURCE OUT_DIR
+
+REGION is a Geofabrik path, e.g. europe/great-britain.
+SOURCE is that region's .osm.pbf extract, or an Overpass .json file (used
+for the test fixtures).
+"""
 
 from __future__ import annotations
 
@@ -11,14 +16,21 @@ from .publish import write_output
 
 
 def main(argv: list[str]) -> int:
-    if len(argv) != 2:
+    if len(argv) != 3:
         print(__doc__, file=sys.stderr)
         return 2
-    source, out_dir = Path(argv[0]), Path(argv[1])
-    loaded = load_overpass(source)
+    region, source, out_dir = argv[0], Path(argv[1]), Path(argv[2])
+    if source.suffix == ".json":
+        loaded = load_overpass(source)
+        timestamp = None
+    else:
+        from .pbf import load_pbf  # osmium is only needed for real extracts
+
+        loaded = load_pbf(source)
+        timestamp = loaded.data_timestamp
     result = build_courses(loaded.features)
-    write_output(result, out_dir)
-    print(f"{len(result.courses)} courses written to {out_dir}")
+    region_dir = write_output(result, out_dir, region, timestamp)
+    print(f"{len(result.courses)} courses written to {region_dir}")
     if loaded.skipped_relations:
         print(f"{loaded.skipped_relations} relations ignored")
     return 0

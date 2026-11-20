@@ -8,8 +8,9 @@ from shapely.geometry import Polygon
 
 from bcs_golf_maps.geo import METRES_PER_YARD, Projector
 from bcs_golf_maps.normalise import ATTRIBUTION, BuildResult
-from bcs_golf_maps.publish import build_index, render_report, write_output
+from bcs_golf_maps.publish import build_index, build_regions, render_report, write_output
 
+REGION = "europe/great-britain"
 WATERFALL_PARS = [4, 4, 4, 4, 3, 4, 4, 5, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4]
 
 
@@ -38,7 +39,7 @@ def test_pars_come_from_osm_and_a_missing_par_is_a_note_not_a_failure(waterfall:
     assert waterfall["parComplete"] is True
     assert kingfisher["pars"] == [None] * 9
     assert kingfisher["parComplete"] is False
-    assert "hole 1: no par" in kingfisher["notes"]
+    assert "no par: holes 1, 2, 3, 4, 5, 6, 7, 8, 9" in kingfisher["notes"]
 
 
 def test_every_hole_has_a_tee_and_a_green_with_its_centre_inside(waterfall: dict, kingfisher: dict) -> None:
@@ -99,26 +100,48 @@ def test_every_course_carries_the_attribution(mannings_heath: BuildResult) -> No
 
 
 def test_output_files_round_trip(mannings_heath: BuildResult, tmp_path) -> None:
-    write_output(mannings_heath, tmp_path, data_timestamp="2026-11-20T09:39:35Z")
-    index = json.loads((tmp_path / "index.json").read_text())
+    region_dir = write_output(mannings_heath, tmp_path, REGION, data_timestamp="2026-11-20T09:39:35Z")
+    assert region_dir == tmp_path / "europe" / "great-britain"
+    index = json.loads((region_dir / "index.json").read_text())
     assert index["courseCount"] == 2
     assert index["attribution"] == ATTRIBUTION
+    assert index["region"] == REGION
     for entry in index["courses"]:
-        course = json.loads((tmp_path / entry["file"]).read_text())
+        course = json.loads((region_dir / entry["file"]).read_text())
         assert course["id"] == entry["id"]
         assert course["holeCount"] == entry["holeCount"] == len(course["holes"])
-    assert "ready: 2" in (tmp_path / "report.md").read_text()
+    assert "ready: 2" in (region_dir / "report.md").read_text()
 
 
 def test_output_is_byte_for_byte_repeatable(mannings_heath: BuildResult, tmp_path) -> None:
     first, second = tmp_path / "a", tmp_path / "b"
-    write_output(mannings_heath, first)
-    write_output(mannings_heath, second)
+    write_output(mannings_heath, first, REGION)
+    write_output(mannings_heath, second, REGION)
     for path in first.rglob("*.json"):
         assert path.read_bytes() == (second / path.relative_to(first)).read_bytes()
 
 
 def test_report_and_index_agree_on_counts(mannings_heath: BuildResult) -> None:
-    index = build_index(mannings_heath, None)
+    index = build_index(mannings_heath, REGION, None)
     assert index["courseCount"] == len(index["courses"]) == 2
-    assert "Skipped: 1" in render_report(mannings_heath, None)
+    assert "Skipped: 1" in render_report(mannings_heath, REGION, None)
+
+
+def test_regions_json_lists_every_region_on_disk_and_survives_a_rebuild(mannings_heath: BuildResult, tmp_path) -> None:
+    write_output(mannings_heath, tmp_path, "europe/great-britain")
+    write_output(mannings_heath, tmp_path, "europe/ireland-and-northern-ireland")
+    write_output(mannings_heath, tmp_path, "europe/great-britain")  # rebuild one
+    regions = json.loads((tmp_path / "regions.json").read_text())
+    assert [r["path"] for r in regions["regions"]] == [
+        "europe/great-britain",
+        "europe/ireland-and-northern-ireland",
+    ]
+    gb = regions["regions"][0]
+    assert gb["index"] == "europe/great-britain/index.json"
+    assert gb["courseCount"] == 2
+    assert gb["statusCounts"] == {"ready": 2, "partial": 0, "outline": 0}
+    assert gb["bounds"][0] < gb["bounds"][2] and gb["bounds"][1] < gb["bounds"][3]
+
+
+def test_regions_json_with_nothing_built_is_empty(tmp_path) -> None:
+    assert build_regions(tmp_path)["regions"] == []
