@@ -34,6 +34,7 @@ jobs:
         run: uv run python -m golf_course_maps.cli build-all regions.txt data out
       - name: Collect the quality reports
         run: |
+          rm -rf reports # the checkout already has last week's
           mkdir reports
           (cd out && find . -name report.md -exec cp --parents {} ../reports \;)
       - uses: actions/upload-pages-artifact@v5
@@ -65,6 +66,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v7
+      - name: Clear the old reports, so a removed region's report goes too
+        run: rm -rf reports
       - uses: actions/download-artifact@v8
         with:
           name: reports
